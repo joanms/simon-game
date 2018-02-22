@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Simon Game</title>
+</head>
+<body>
+    
+<audio id="blue-sound">
+    <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3"></source>
+	<source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg"></source>
+</audio>
+<audio id="red-sound">
+    <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3"></source>
+	<source src="assets/audio/ogg/177948__ubikphonik__c1.ogg"></source>
+</audio>  
+<audio id="yellow-sound">
+    <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3"></source>
+	<source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg"></source>
+</audio>  
+<audio id="orange-sound">
+    <source src="assets/audio/mp3/177941__ubikphonik__g1.mp3"></source>
+	<source src="assets/audio/ogg/177941__ubikphonik__g1.ogg"></source>
+</audio>
+<audio id="error-sound">
+    <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3"></source>
+	<source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg"></source>
+</audio>
+
+<div class="container-fluid">
+    <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4 game-container">
+        <h1>Simon</h1>
+    <div>
+        <button type="button" class="btn btn-secondary">Start</button>
+        <button type="button" class="btn btn-secondary">Reset</button>
+        </div> <!-- Start and Reset buttons -->
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+            Normal Mode</label>
+    </div> <!-- Normal Mode radio button -->
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+            Strict Mode</label>
+    </div> <!-- Strict Mode radio button -->
+    <div id="blue-button" class="coloured-button"></div>
+    <div id="red-button" class="coloured-button"></div>    
+    <div id="yellow-button" class="coloured-button"></div>    
+    <div id="orange-button" class="coloured-button"></div> 
+    </div> <!-- Main block -->
+</div> <!-- Container -->
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>    
+  <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>

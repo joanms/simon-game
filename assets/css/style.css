@@ -1,0 +1,63 @@
+.container-fluid {
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.btn-secondary {
+    display: inline-block;
+}
+
+.coloured-button {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    border-radius: 20%;
+    margin: 10px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.coloured-button:active {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+}
+
+#blue-button {
+    background-color: rgba(0,0,255,1);
+}
+
+#blue-button:active {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, .75);
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, .75); 
+}
+
+#red-button {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+#red-button:active {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 0, 0, .75); 
+}
+
+#yellow-button {
+    background-color: rgba(255, 255, 0, 1);
+}
+
+#yellow-button:active {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, .75); 
+}
+
+#orange-button {
+    background-color: rgba(255, 165, 0, 1);
+}
+
+ #orange-button:active {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 165, 0, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 165, 0, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 165, 0, .75); 
+} 
