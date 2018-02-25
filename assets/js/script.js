@@ -1,19 +1,25 @@
 var blueSound = $("#blue-sound")[0];
-$("#blue-button").click(function() {
+var redSound = $("#red-sound")[0];
+var yellowSound = $("#yellow-sound")[0];
+var orangeSound = $("#orange-sound")[0];
+
+var buttonSounds
+
+$("#blue").click(function() {
   blueSound.play();
 });
 
-var redSound = $("#red-sound")[0];
-$("#red-button").click(function() {
+$("#red").click(function() {
   redSound.play();
 });
 
-var yellowSound = $("#yellow-sound")[0];
-$("#yellow-button").click(function() {
+$("#yellow").click(function() {
   yellowSound.play();
 });
 
-var orangeSound = $("#orange-sound")[0];
-$("#orange-button").click(function() {
+$("#orange").click(function() {
   orangeSound.play();
-});
+}); 
+
+  var colourArray = ["#blue", "#orange", "#red", "#yellow"];
+  var randomColour = colourArray[Math.floor(Math.random() * 4)];
