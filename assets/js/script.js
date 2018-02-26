@@ -1,25 +1,30 @@
-var blueSound = $("#blue-sound")[0];
-var redSound = $("#red-sound")[0];
-var yellowSound = $("#yellow-sound")[0];
-var orangeSound = $("#orange-sound")[0];
-
-var buttonSounds
-
 $("#blue").click(function() {
-  blueSound.play();
+  $("#blue-sound")[0].play();
 });
 
 $("#red").click(function() {
-  redSound.play();
+   $("#red-sound")[0].play();
 });
 
 $("#yellow").click(function() {
-  yellowSound.play();
+  $("#yellow-sound")[0].play();
 });
 
 $("#orange").click(function() {
-  orangeSound.play();
+  $("#orange-sound")[0].play();
 }); 
 
   var colourArray = ["#blue", "#orange", "#red", "#yellow"];
-  var randomColour = colourArray[Math.floor(Math.random() * 4)];
+  
+  function generateRandom() {
+      var randomColour = colourArray[Math.floor(Math.random() * 4)];
+      if (randomColour = "#blue") {
+          $("#blue-sound")[0].play();
+      } else if (randomColour = "#orange") {
+          $("#orange-sound")[0].play();
+      } else if (randomColour = "#red") {
+          $("#red-sound")[0].play();
+      } else {
+          $("#yellow-sound")[0].play();
+      }
+  }
