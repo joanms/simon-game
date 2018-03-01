@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous|Roboto');
  
+body {
+    background-color: lightgrey;
+} 
+ 
 h1 {
     text-align: center;
     font-family: "Righteous", cursive;
@@ -8,9 +12,9 @@ h1 {
 
 .game-container {
     height: 100vh;
-    background-color: lightgrey;
 }
 
+/* Buttons */
 .btn-secondary {
     margin: 10px;
 }
@@ -21,6 +25,7 @@ h1 {
 }
 
 .colour {
+    opacity: 1;
     height: 250px;
     width: 250px;
     display: inline-block;
@@ -29,30 +34,28 @@ h1 {
     box-shadow: 10px 10px 5px grey;
 }
 
-.colour:active {
+.active {
+    opacity: .7;
     -webkit-transform: translate(0, 4px);
     -moz-transform: translate(0, 4px);
     transform: translate(0, 4px);
-    -webkit-box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, .75);
-    -moz-box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, .75);
-    box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, .75);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, .75);
 }
 
 #blue {
-    background-color: rgba(0,0,255,1);
+    background-color: blue;
 }
 
 #red {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: red;
 }
-
 
 #yellow {
-    background-color: rgba(255, 255, 0, 1);
+    background-color: yellow;
 }
-
 
 #orange {
-    background-color: rgba(255, 165, 0, 1);
+    background-color: orange;
 }
-
