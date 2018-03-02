@@ -2,8 +2,30 @@ var colourArray = ["#blue", "#orange", "#red", "#yellow"];
 var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
-var gameScore = document.getElementById("score").value;
-const levels = 20;
+var gameScore = 0;
+console.log(gameScore);
+
+function highlightColours() {
+    function setInterval() {
+        if (this.id == "#blue") {
+            $("#blue-sound")[0].play();
+            $("#blue").addClass("active");
+            setTimeout(function(){$("#blue").removeClass(active);}, 500);
+        } else if (this.id == "#orange") {
+            $("#orange-sound")[0].play();
+            $("#orange").addClass("active");
+            setTimeout(function(){$("#orange").removeClass("active");}, 500);
+        } else if (this.id == "#red") {
+            $("#red-sound")[0].play();
+            $("#red").addClass("active");
+            setTimeout(function(){$("#red").removeClass("active");}, 500);
+        } else {
+            $("#yellow-sound")[0].play();
+            $("#yellow").addClass("active");
+            setTimeout(function(){$("#yellow").removeClass("active");}, 500);
+        }
+    }
+}
 
 // Start game
 $("#start").click(function() {
@@ -17,9 +39,9 @@ $("#start").click(function() {
   } else {
       $("#yellow-sound")[0].play();
   }
+  setTimeout(function(){$(rand).removeClass("active");}, 500);
   gameSequence.push(rand);
   console.log(gameSequence);
-  setTimeout(function(){$(rand).removeClass("active");}, 500);
 });
 
 // User input
@@ -38,24 +60,13 @@ $(".colour").mouseup(function() {
 // Compare the user input with the game output
 function sequenceCompare() {
   if (userSequence.join == gameSequence.join && userSequence.length == gameSequence.length) {
-    console.log("Correct");
-    userSequence = []; {
-      gameSequence.push(rand);
-      console.log(gameSequence);
+    gameScore++;
+    $("#score").text(gameScore);
+    userSequence = []; 
+    gameSequence.push(rand);
       var arrayLength = gameSequence.length;
       for (var i = 0; i < arrayLength; i++) {
-        if (id = "#blue") {
-      $("#blue-sound")[0].play();
-  } else if (id = "#orange") {
-      $("#orange-sound")[0].play();
-  } else if (id = "#red") {
-      $("#red-sound")[0].play();
-  } else {
-      $("#yellow-sound")[0].play();
-  } 
-      $("#"+(this.id)+"-sound")[0].play();
-      $(this).addClass("active");
-      }
+        gameSequence[i];
     }
   } 
 }

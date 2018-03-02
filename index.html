@@ -36,7 +36,7 @@
    <div class="row"> 
         <div class="col-xs-12 col-sm-12 col-md-2 offset-md-4">
             <button type="button" id="start" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off">Start</button>
-            <button type="button" id="score" class="btn btn-secondary">Score <span id="score" class="badge badge-light">0</span></button>
+            <div id="score">0</div>
         </div>
     
         <div class="col-xs-12 col-sm-12 col-md-2">
@@ -51,11 +51,17 @@
         </div> <!-- Radio buttons -->
     </div>    
 
-    <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-        <div id="blue" class="colour"></div>
-        <div id="red" class="colour"></div>    
-        <div id="yellow" class="colour"></div>    
-        <div id="orange" class="colour"></div>
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+            <div class="row">
+                <div id="blue" class="colour"></div>
+                <div id="red" class="colour"></div>    
+            </div>
+            <div class="row">
+                <div id="yellow" class="colour"></div>    
+                <div id="orange" class="colour"></div>
+            </div> 
+        </div>
+        
     </div>
 </div>
     <footer class="container-fluid">This game uses these sounds from freesound.org:

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Roboto');
  
 body {
     background-color: lightgrey;
@@ -6,8 +6,8 @@ body {
  
 h1 {
     text-align: center;
-    font-family: "Righteous", cursive;
-    font-size: 100px;
+    font-family: "Audiowide", cursive;
+    font-size: 150px;
 }
 
 .game-container {
@@ -16,12 +16,26 @@ h1 {
 
 /* Buttons */
 .btn-secondary {
+    height: 50px;
     margin: 10px;
+    font-family: "Audiowide", cursive;
+    font-size: 20px;
 }
 
-.badge {
-    font-family: "Roboto", sans-serif;
+.form-check-label {
+    font-family: "Audiowide", cursive;
     font-size: 20px;
+}
+
+#score {
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    font-family: "Audiowide", cursive;
+    font-size: 30px;
+    border-radius: 5%;
 }
 
 .colour {
