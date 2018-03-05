@@ -68,7 +68,7 @@ function highlightColours() {
 }
 
 function sequenceCompare() {
-  if (userSequence.join == gameSequence.join && userSequence.length == gameSequence.length && gameScore < 20) {
+  if (userSequence.join == gameSequence.join && userSequence.length == gameSequence.length) {
     gameScore++;
     $("#score").text(gameScore);
     userSequence = []; 
@@ -79,7 +79,7 @@ function sequenceCompare() {
       var arrayLength = gameSequence.length;
       for (var i = 0; i < arrayLength; i++) {
         gameSequence[i].highlightColours();
-    }
-  } 
-}
+      }
+    } 
+  }
 }
