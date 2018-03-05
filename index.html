@@ -34,21 +34,12 @@
 <div class="container-fluid game-container">
     <h1>Simon</h1>
    <div class="row"> 
-        <div class="col-xs-12 col-sm-12 col-md-2 offset-md-4">
-            <button type="button" id="start" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off">Start</button>
-            <div id="score">0</div>
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+            <button type="button" id="start" class="btn btn-dark">Start</button>
+            <button type="button" id="strict" class="btn btn-dark" data-toggle="buttons">Strict</button>
+            <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span>
+</button>
         </div>
-    
-        <div class="col-xs-12 col-sm-12 col-md-2">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="normal" value="option1">
-                <label class="form-check-label" for="exampleRadios1">Normal Mode</label>
-        </div> <!-- Normal Mode radio button -->
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="strict" value="option1">
-                <label class="form-check-label" for="exampleRadios1">Strict Mode</label>
-            </div> <!-- Strict Mode radio button -->
-        </div> <!-- Radio buttons -->
     </div>    
 
         <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">

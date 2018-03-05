@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Exo+2');
  
 body {
     background-color: lightgrey;
@@ -15,27 +15,20 @@ h1 {
 }
 
 /* Buttons */
-.btn-secondary {
-    height: 50px;
+.btn {
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
     margin: 10px;
-    font-family: "Audiowide", cursive;
-    font-size: 20px;
 }
 
-.form-check-label {
-    font-family: "Audiowide", cursive;
-    font-size: 20px;
+.btn-group-toggle {
+    display: inline-block;
 }
 
 #score {
-    height: 50px;
-    width: 100px;
-    background-color: white;
-    display: inline-block;
-    text-align: center;
-    font-family: "Audiowide", cursive;
+    font-family: "Exo 2", sans-serif;
     font-size: 30px;
-    border-radius: 5%;
+    margin-left: 10px;
 }
 
 .colour {
