@@ -3,6 +3,7 @@ var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
+var i;
 
 
 // Start game
@@ -26,7 +27,6 @@ $("#start").click(function() {
   gameSequence.push(rand);
   console.log(gameSequence);
 });
-
 
 // User input
 
@@ -67,19 +67,28 @@ function highlightColours() {
     }
 }
 
+
 function sequenceCompare() {
-  if (userSequence.join == gameSequence.join && userSequence.length == gameSequence.length) {
+  if (userSequence.length == gameSequence.length && 
+  userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+    console.log("Match");
     gameScore++;
     $("#score").text(gameScore);
     userSequence = []; 
-    if (gameScore == 20) {
-      alert("You win!");
-    } else {
-    gameSequence.push(rand);
-      var arrayLength = gameSequence.length;
-      for (var i = 0; i < arrayLength; i++) {
-        gameSequence[i].highlightColours();
+      if (gameScore == 20) { // The user has won
+        alert("You win!");
+        location.reload();
+      } else {
+        var rand = colourArray[Math.floor(Math.random() * 4)]; // The user has input the correct sequence, but the game is not over
+        gameSequence.push(rand);
+        console.log(gameSequence);
+        for (i = 0; i < gameSequence.length; i++) {
+        gameSequence[i].highlightColours();  // PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
       }
     } 
+  } else if (strict=true) { // The user has input the wrong sequence and must start over
+    location.reload;
+  } else {                  // The user has input the wrong sequence but may try again
+        highlightColours();
   }
 }
