@@ -46,7 +46,6 @@ $(".colour").mouseup(function() {
 // Compare the user input with the game output
 
 function highlightColours() {
-    function setInterval() {
         if (this.id == "#blue") {
             $("#blue-sound")[0].play();
             $("#blue").addClass("active");
@@ -63,8 +62,7 @@ function highlightColours() {
             $("#yellow-sound")[0].play();
             $("#yellow").addClass("active");
             setTimeout(function(){$("#yellow").removeClass("active");}, 500);
-        }
-    }
+      }
 }
 
 
@@ -72,15 +70,15 @@ function sequenceCompare() {
   if (userSequence.length == gameSequence.length && 
   userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
     console.log("Match");
-    gameScore++;
-    $("#score").text(gameScore);
+    gameScore++; //increment game score
+    $("#score").text(gameScore); //display game score
     userSequence = []; 
       if (gameScore == 20) { // The user has won
         alert("You win!");
         location.reload();
       } else {
         var rand = colourArray[Math.floor(Math.random() * 4)]; // The user has input the correct sequence, but the game is not over
-        gameSequence.push(rand);
+        gameSequence.push(rand); //add one more radom number to the sequence
         console.log(gameSequence);
         for (i = 0; i < gameSequence.length; i++) {
         gameSequence[i].highlightColours();  // PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
