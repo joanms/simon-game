@@ -81,7 +81,7 @@ function sequenceCompare() {
         gameSequence.push(rand); //add one more radom number to the sequence
         console.log(gameSequence);
         for (i = 0; i < gameSequence.length; i++) {
-        gameSequence[i].highlightColours();  // PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
+        //gameSequence[i].highlightColours();   PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
       }
     } 
   } else if (strict=true) { // The user has input the wrong sequence and must start over
