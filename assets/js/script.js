@@ -66,13 +66,13 @@ $(".colour").mouseup(function() {
 // }
 
 
-// The following version of the highlightColours function was suggested by my mentor, Michael Newton
+// The following version of the highlightColours function by my mentor, Michael Newton
 
 gameColours = ["#blue", "#red", "#orange", "#yellow"];
 
 function highlightColours(colours) {
   // Code here to highlight element
-  var currentColour = gameSequence.pop();
+  var currentColour = colours.pop();
   // ... currentColour used
   $(currentColour + "-sound")[0].play();
   $(currentColour).addClass("active");
