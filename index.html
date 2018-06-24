@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Simon Game</title>
     
@@ -35,10 +35,13 @@
     <h1>Simon</h1>
    <div class="row"> 
         <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" id="strict-mode" for="customCheck1">Strict Mode</label>
+            </div>
             <button type="button" id="start" class="btn btn-dark">Start</button>
-            <button type="button" id="strict" class="btn btn-dark" data-toggle="buttons">Strict</button>
             <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span>
-</button>
+            </button>
         </div>
     </div>    
 

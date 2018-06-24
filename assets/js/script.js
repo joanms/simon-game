@@ -9,7 +9,7 @@ var i;
 // Start game
 
 $("#strict").click(function() {
-  $("#strict").addClass("active");
+  $("#strict").toggleClass("active");
 });
 
 $("#start").click(function() {
@@ -66,7 +66,7 @@ $(".colour").mouseup(function() {
 // }
 
 
-// The following version of the highlightColours function by my mentor, Michael Newton
+// The following version of the highlightColours function was suggested by my mentor, Michael Newton
 
 gameColours = ["#blue", "#red", "#orange", "#yellow"];
 
@@ -78,7 +78,7 @@ function highlightColours(colours) {
   $(currentColour).addClass("active");
 
 
-  if (colours.length !== 0)
+//  if (colours.length!==0)
   {
     setTimeout(function() { $(currentColour).removeClass("active");
                             highlightColours(colours); }, 500);
@@ -104,7 +104,7 @@ function sequenceCompare() {
         console.log(gameSequence);
         highlightColours(gameSequence.slice()); // this line of code suggested by my mentor Michael Newton
     } 
-  } else if (strict=true) { // The user has input the wrong sequence and must start over
+  } else if (("#strict-mode").checked==true) { // The user has input the wrong sequence and must start over
     location.reload;
   } else {                  // The user has input the wrong sequence but may try again
         highlightColours();
