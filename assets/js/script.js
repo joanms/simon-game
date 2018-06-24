@@ -8,10 +8,6 @@ var i;
 
 // Start game
 
-$("#strict").click(function() {
-  $("#strict").toggleClass("active");
-});
-
 $("#start").click(function() {
   $(rand).addClass("active");
   if (rand == "#blue") {
