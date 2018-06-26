@@ -1,28 +1,22 @@
 var colourArray = ["#blue", "#orange", "#red", "#yellow"];
-var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
-var i;
 
-
-// Start game
 
 $("#start").click(function() {
-  $(rand).addClass("active");
-  if (rand == "#blue") {
-      $("#blue-sound")[0].play();
-  } else if (rand == "#orange") {
-      $("#orange-sound")[0].play();
-  } else if (rand == "#red") {
-      $("#red-sound")[0].play();
-  } else {
-      $("#yellow-sound")[0].play();
-  }
-  setTimeout(function(){$(rand).removeClass("active");}, 500);
-  gameSequence.push(rand);
-  console.log(gameSequence);
+  var randomColour = colourArray[Math.floor(Math.random() * 4)];  //select the first colour
+  gameSequence.push(randomColour); //add the colour to the array
+  console.log(gameSequence); //see if the above worked
 });
+
+
+function highlightColours() {
+  for (var i = 0; i < gameSequence.length; i++) {
+   [i].addClass(".active"); //Highlight the colour(s)
+   [i] + "-sound".play;  //Play the sound
+  }
+}
 
 // User input
 
@@ -38,48 +32,6 @@ $(".colour").mouseup(function() {
   $(this).removeClass("active");
 });
 
-
-// Highlight the colours in the game sequence
-
-// function highlightColours() {
-//         if (this.id == "#blue") {
-//             $("#blue-sound")[0].play();
-//             $("#blue").addClass("active");
-//             setTimeout(function(){$("#blue").removeClass(active);}, 500);
-//         } else if (this.id == "#orange") {
-//             $("#orange-sound")[0].play();
-//             $("#orange").addClass("active");
-//             setTimeout(function(){$("#orange").removeClass("active");}, 500);
-//         } else if (this.id == "#red") {
-//             $("#red-sound")[0].play();
-//             $("#red").addClass("active");
-//             setTimeout(function(){$("#red").removeClass("active");}, 500);
-//         } else {
-//             $("#yellow-sound")[0].play();
-//             $("#yellow").addClass("active");
-//             setTimeout(function(){$("#yellow").removeClass("active");}, 500);
-//       }
-// }
-
-
-// The following version of the highlightColours function was suggested by my mentor, Michael Newton
-
-gameColours = ["#blue", "#red", "#orange", "#yellow"];
-
-function highlightColours(colours) {
-  // Code here to highlight element
-  var currentColour = colours.pop();
-  // ... currentColour used
-  $(currentColour + "-sound")[0].play();
-  $(currentColour).addClass("active");
-
-
-//  if (colours.length!==0)
-  {
-    setTimeout(function() { $(currentColour).removeClass("active");
-                            highlightColours(colours); }, 500);
-  }
-}
 
 
 // Compare the user input with the game output
