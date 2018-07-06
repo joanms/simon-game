@@ -10,11 +10,23 @@ $("#start").click(function() {
   console.log(gameSequence); //see if the above worked
 });
 
+$("#reset").click(function() {
+  location.reload();
+});
 
-function highlightColours() {
-  for (var i = 0; i < gameSequence.length; i++) {
-   [i].addClass(".active"); //Highlight the colour(s)
-   [i] + "-sound".play;  //Play the sound
+
+function highlightColours(colours) {
+  // Code here to high element
+  var currentColour = gameSequence.pop();
+  // ... currentColour used
+  $(currentColour + "-sound")[0].play();
+  $(currentColour).addClass("active");
+
+
+  if (colours.length !== 0)
+  {
+    setTimeout(function() { $(currentColour).removeClass("active");
+                            highlightColours(colours); }, 500);
   }
 }
 
@@ -53,7 +65,7 @@ function sequenceCompare() {
         highlightColours(gameSequence.slice()); // this line of code suggested by my mentor Michael Newton
     } 
   } else if (("#strict-mode").checked==true) { // The user has input the wrong sequence and must start over
-    location.reload;
+    location.reload();
   } else {                  // The user has input the wrong sequence but may try again
         highlightColours();
   }
