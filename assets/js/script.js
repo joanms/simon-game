@@ -62,7 +62,13 @@ function sequenceCompare() {
         var rand = colourArray[Math.floor(Math.random() * 4)]; // The user has input the correct sequence, but the game is not over
         gameSequence.push(rand); //add one more radom number to the sequence
         console.log(gameSequence);
+<<<<<<< HEAD
         highlightColours(gameSequence.slice()); // this line of code suggested by my mentor Michael Newton
+=======
+        for (i = 0; i < gameSequence.length; i++) {
+        gameSequence[i].highlightColours();  // PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
+      }
+>>>>>>> parent of eef3671... minor edits of the JavaScript
     } 
   } else if (("#strict-mode").checked==true) { // The user has input the wrong sequence and must start over
     location.reload();
