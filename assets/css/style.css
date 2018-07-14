@@ -17,12 +17,13 @@ h1 {
 /* Buttons */
 .btn {
     font-family: "Exo 2", sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     margin: 10px;
 }
 
-.btn-group-toggle {
-    display: inline-block;
+#strict-mode {
+    font-family: "Exo 2", sans-serif;
+    font-size: 18px;
 }
 
 #score {

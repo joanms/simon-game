@@ -1,32 +1,34 @@
 var colourArray = ["#blue", "#orange", "#red", "#yellow"];
-var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
-var i;
 
-
-// Start game
-
-$("#strict").click(function() {
-  $("#strict").addClass("active");
-});
 
 $("#start").click(function() {
-  $(rand).addClass("active");
-  if (rand == "#blue") {
-      $("#blue-sound")[0].play();
-  } else if (rand == "#orange") {
-      $("#orange-sound")[0].play();
-  } else if (rand == "#red") {
-      $("#red-sound")[0].play();
-  } else {
-      $("#yellow-sound")[0].play();
-  }
-  setTimeout(function(){$(rand).removeClass("active");}, 500);
-  gameSequence.push(rand);
-  console.log(gameSequence);
+  var randomColour = colourArray[Math.floor(Math.random() * 4)];  //select the first colour
+  gameSequence.push(randomColour); //add the colour to the array
+  console.log(gameSequence); //see if the above worked
 });
+
+$("#reset").click(function() {
+  location.reload();
+});
+
+
+function highlightColours(colours) {
+  // Code here to high element
+  var currentColour = gameSequence.pop();
+  // ... currentColour used
+  $(currentColour + "-sound")[0].play();
+  $(currentColour).addClass("active");
+
+
+  if (colours.length !== 0)
+  {
+    setTimeout(function() { $(currentColour).removeClass("active");
+                            highlightColours(colours); }, 500);
+  }
+}
 
 // User input
 
@@ -43,28 +45,8 @@ $(".colour").mouseup(function() {
 });
 
 
+
 // Compare the user input with the game output
-
-function highlightColours() {
-        if (this.id == "#blue") {
-            $("#blue-sound")[0].play();
-            $("#blue").addClass("active");
-            setTimeout(function(){$("#blue").removeClass(active);}, 500);
-        } else if (this.id == "#orange") {
-            $("#orange-sound")[0].play();
-            $("#orange").addClass("active");
-            setTimeout(function(){$("#orange").removeClass("active");}, 500);
-        } else if (this.id == "#red") {
-            $("#red-sound")[0].play();
-            $("#red").addClass("active");
-            setTimeout(function(){$("#red").removeClass("active");}, 500);
-        } else {
-            $("#yellow-sound")[0].play();
-            $("#yellow").addClass("active");
-            setTimeout(function(){$("#yellow").removeClass("active");}, 500);
-      }
-}
-
 
 function sequenceCompare() {
   if (userSequence.length == gameSequence.length && 
@@ -80,12 +62,10 @@ function sequenceCompare() {
         var rand = colourArray[Math.floor(Math.random() * 4)]; // The user has input the correct sequence, but the game is not over
         gameSequence.push(rand); //add one more radom number to the sequence
         console.log(gameSequence);
-        for (i = 0; i < gameSequence.length; i++) {
-        //gameSequence[i].highlightColours();   PROBLEM: I need to find a way to call highlightColours() on each item in the gameSequence array.
-      }
+        highlightColours(gameSequence.slice()); // this line of code suggested by my mentor Michael Newton
     } 
-  } else if (strict=true) { // The user has input the wrong sequence and must start over
-    location.reload;
+  } else if (("#strict-mode").checked==true) { // The user has input the wrong sequence and must start over
+    location.reload();
   } else {                  // The user has input the wrong sequence but may try again
         highlightColours();
   }
