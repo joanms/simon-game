@@ -1,14 +1,9 @@
 var colourArray = ["#blue", "#orange", "#red", "#yellow"];
+var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
 
-
-$("#start").click(function() {
-  var randomColour = colourArray[Math.floor(Math.random() * 4)];  //select the first colour
-  gameSequence.push(randomColour); //add the colour to the array
-  console.log(gameSequence); //see if the above worked
-});
 
 $("#reset").click(function() {
   location.reload();
