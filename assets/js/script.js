@@ -5,29 +5,33 @@ var userSequence = [];
 var gameScore = 0;
 
 
-// When "reset" is clicked, the game should start over from the beginning
+// When the Reset button is clicked, the game should start over from the beginning
 $("#reset").click(function() {
   location.reload();
 });
 
+//The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
+function highlightColours(colours) {
+  $("#"+(this.id)+"-sound")[0].play();
+  $(this).addClass("active");
+  setTimeout(function(){$(currentColour).removeClass("active");}, 500);
+}
 
-//When "Start" is clicked, the first colour in the random sequence should be highlighted, and its sound should play
+//When the Start button is clicked, the first random colour should be added to gameSequence
 $("#start").click(function() {
-  $(rand).addClass("active");
-  $(rand + "-sound")[0].play();
-  setTimeout(function(){$(rand).removeClass("active");}, 500);
   gameSequence.push(rand);
   console.log(gameSequence);
+  gameSequence.forEach(highlightColours());
 });
-
 
 // When the user clicks a coloured button, it should be highlighted and its sound should play
 $(".colour").mousedown(function() {
   $("#"+(this.id)+"-sound")[0].play();
   $(this).addClass("active");
-  userSequence.push("#" + this.id);
+  userSequence.push("#" + this.id); // The user's selection is added to userSequence
   console.log(userSequence);
-  sequenceCompare();
+  if (userSequence.length == gameSequence.length) { //userSequence is compared to game Sequence
+    sequenceCompare()}
 });
 
 $(".colour").mouseup(function() {
@@ -35,27 +39,10 @@ $(".colour").mouseup(function() {
 });
 
 
-//My mentor, Michael Newton, suggested the highlightColours function to highlight the colours in gameSequence
-
-function highlightColours(colours) {
-  var currentColour = gameSequence.pop();
-  $(currentColour + "-sound")[0].play();
-  $(currentColour).addClass("active");
-
-
-  if (colours.length !== 0)
-  {
-    setTimeout(function() { $(currentColour).removeClass("active");
-                            highlightColours(colours); }, 500);
-  }
-}
-
-
 // Compare the user input with the game output
 
 function sequenceCompare() {
-  if (userSequence.length == gameSequence.length && 
-  userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+  if (userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
     console.log("Match");  // Check if the above worked correctly
     gameScore++; //Increment game score
     $("#score").text(gameScore); //Display game score
