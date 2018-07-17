@@ -12,16 +12,18 @@ $("#reset").click(function() {
 
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
 function highlightColours(colours) {
-  $("#"+(this.id)+"-sound")[0].play();
-  $(this).addClass("active");
-  setTimeout(function(){$(currentColour).removeClass("active");}, 500);
+  var index;
+  for (index = 0; index < gameSequence.length; ++index) {
+    $([index]+"-sound")[0].play();
+    $([index]).addClass("active");
+    setTimeout(function(){$([index]).removeClass("active");}, 500);
+  }
 }
 
 //When the Start button is clicked, the first random colour should be added to gameSequence
 $("#start").click(function() {
   gameSequence.push(rand);
   console.log(gameSequence);
-  gameSequence.forEach(highlightColours());
 });
 
 // When the user clicks a coloured button, it should be highlighted and its sound should play
