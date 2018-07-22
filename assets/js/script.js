@@ -40,9 +40,9 @@ $("#reset").click(function() {
 
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
 function highlightColours() {
-  $("#"+(this.id)+"-sound")[0].play();
-  $(this).addClass("active");
-  
+  var currentColour = gameSequence.slice();
+  $(currentColour + "-sound")[0].play();
+  $(currentColour).addClass("active");
 }
 
 
@@ -65,6 +65,6 @@ function sequenceCompare() {
   } else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
     location.reload();
   } else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
-        highlightColours();
+        gameSequence.forEach(highlightColours);
   }
 }
