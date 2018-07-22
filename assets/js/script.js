@@ -5,26 +5,15 @@ var userSequence = [];
 var gameScore = 0;
 
 
-// When the Reset button is clicked, the game should start over from the beginning
-$("#reset").click(function() {
-  location.reload();
-});
+//User input
 
-//The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
-function highlightColours(colours) {
-  var index;
-  for (index = 0; index < gameSequence.length; ++index) {
-    $([index]+"-sound")[0].play();
-    $([index]).addClass("active");
-    setTimeout(function(){$([index]).removeClass("active");}, 500);
-  }
-}
-
-//When the Start button is clicked, the first random colour should be added to gameSequence
+//When the user clicks the Start button, the first random colour should be added to gameSequence
 $("#start").click(function() {
   gameSequence.push(rand);
   console.log(gameSequence);
+  gameSequence.forEach(highlightColours);
 });
+
 
 // When the user clicks a coloured button, it should be highlighted and its sound should play
 $(".colour").mousedown(function() {
@@ -35,13 +24,29 @@ $(".colour").mousedown(function() {
   if (userSequence.length == gameSequence.length) { //userSequence is compared to game Sequence
     sequenceCompare()}
 });
-
 $(".colour").mouseup(function() {
   $(this).removeClass("active");
 });
 
 
-// Compare the user input with the game output
+// When the user clicks the Reset button, the game should start over from the beginning
+$("#reset").click(function() {
+  location.reload();
+});
+
+
+
+//Game output
+
+//The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
+function highlightColours() {
+  $("#"+(this.id)+"-sound")[0].play();
+  $(this).addClass("active");
+  
+}
+
+
+// Compare the user's sequence with the randomly generated sequence
 
 function sequenceCompare() {
   if (userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
@@ -52,11 +57,10 @@ function sequenceCompare() {
       if (gameScore == 20) { // The user has achieved the maximum score
         alert("You win!");
         location.reload();
-      } else {
-        var rand = colourArray[Math.floor(Math.random() * 4)]; // The user has input the correct sequence, but not achieved the maximum score of 20
+      } else { // The user has input the correct sequence, but not achieved the maximum score of 20
         gameSequence.push(rand); //Add one more random number to the sequence
         console.log(gameSequence);
-        highlightColours(gameSequence.slice()); // My mentor, Michael Newton, suggested this line of code
+          gameSequence.forEach(highlightColours);
     } 
   } else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
     location.reload();
