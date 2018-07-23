@@ -43,6 +43,7 @@ function highlightColours() {
   var currentColour = gameSequence.slice();
   $(currentColour + "-sound")[0].play();
   $(currentColour).addClass("active");
+  setTimeout(function(){$(currentColour).removeClass("active");}, 500);
 }
 
 
