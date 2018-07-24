@@ -5,13 +5,11 @@ var userSequence = [];
 var gameScore = 0;
 
 
-//User input
-
 //When the user clicks the Start button, the first random colour should be added to gameSequence
 $("#start").click(function() {
   gameSequence.push(rand);
   console.log(gameSequence);
-  gameSequence.forEach(highlightColours);
+  highlightColours();
 });
 
 
@@ -21,7 +19,7 @@ $(".colour").mousedown(function() {
   $(this).addClass("active");
   userSequence.push("#" + this.id); // The user's selection is added to userSequence
   console.log(userSequence);
-  if (userSequence.length == gameSequence.length) { //userSequence is compared to game Sequence
+  if (userSequence.length == gameSequence.length) { //The contents of userSequence and game Sequence are compared as soon as they're the same length
     sequenceCompare()}
 });
 $(".colour").mouseup(function() {
@@ -35,20 +33,18 @@ $("#reset").click(function() {
 });
 
 
-
-//Game output
-
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
 function highlightColours() {
-  var currentColour = gameSequence.slice();
-  $(currentColour + "-sound")[0].play();
-  $(currentColour).addClass("active");
-  setTimeout(function(){$(currentColour).removeClass("active");}, 500);
+  gameSequence.forEach(function(element) {
+    $(element + "-sound")[0].play();
+    $(element).addClass("active");
+    setTimeout(function(){$(element).removeClass("active");}, 500);
+  });
 }
+  
 
 
 // Compare the user's sequence with the randomly generated sequence
-
 function sequenceCompare() {
   if (userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
     console.log("Match");  // Check if the above worked correctly
@@ -61,11 +57,11 @@ function sequenceCompare() {
       } else { // The user has input the correct sequence, but not achieved the maximum score of 20
         gameSequence.push(rand); //Add one more random number to the sequence
         console.log(gameSequence);
-          gameSequence.forEach(highlightColours);
+        highlightColours();
     } 
   } else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
     location.reload();
   } else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
-        gameSequence.forEach(highlightColours);
+        highlightColours();
   }
 }
