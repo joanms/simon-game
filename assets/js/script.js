@@ -1,5 +1,4 @@
 var colourArray = ["#blue", "#orange", "#red", "#yellow"];
-var rand = colourArray[Math.floor(Math.random() * 4)];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
@@ -7,6 +6,7 @@ var gameScore = 0;
 
 //When the user clicks the Start button, the first random colour should be added to gameSequence
 $("#start").click(function() {
+  var rand = colourArray[Math.floor(Math.random() * 4)];
   gameSequence.push(rand);
   console.log(gameSequence);
   highlightColours();
@@ -19,8 +19,7 @@ $(".colour").mousedown(function() {
   $(this).addClass("active");
   userSequence.push("#" + this.id); // The user's selection is added to userSequence
   console.log(userSequence);
-  if (userSequence.length == gameSequence.length) { //The contents of userSequence and game Sequence are compared as soon as they're the same length
-    sequenceCompare()}
+  sequenceCompare();
 });
 $(".colour").mouseup(function() {
   $(this).removeClass("active");
@@ -46,7 +45,8 @@ function highlightColours() {
 
 // Compare the user's sequence with the randomly generated sequence
 function sequenceCompare() {
-  if (userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+  if (userSequence.length == gameSequence.length && 
+  userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
     console.log("Match");  // Check if the above worked correctly
     gameScore++; //Increment game score
     $("#score").text(gameScore); //Display game score
@@ -55,6 +55,7 @@ function sequenceCompare() {
         alert("You win!");
         location.reload();
       } else { // The user has input the correct sequence, but not achieved the maximum score of 20
+        var rand = colourArray[Math.floor(Math.random() * 4)];
         gameSequence.push(rand); //Add one more random number to the sequence
         console.log(gameSequence);
         highlightColours();
