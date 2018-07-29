@@ -2,6 +2,7 @@ var colourArray = ["#blue", "#orange", "#red", "#yellow"];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
+var i = 0;
 
 
 //When the user clicks the Start button, the first random colour should be added to gameSequence
@@ -19,7 +20,8 @@ $(".colour").mousedown(function() {
   $(this).addClass("active");
   userSequence.push("#" + this.id); // The user's selection is added to userSequence
   console.log(userSequence);
-  sequenceCompare();
+  if (userSequence.length == gameSequence.length) {
+  sequenceCompare();}
 });
 $(".colour").mouseup(function() {
   $(this).removeClass("active");
@@ -33,20 +35,29 @@ $("#reset").click(function() {
 
 
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
+//The syntax for this is taken from http://patrickmuff.ch/blog/2014/03/12/for-loop-with-delay-in-javascript/
 function highlightColours() {
   gameSequence.forEach(function(element) {
-    $(element + "-sound")[0].play();
-    $(element).addClass("active");
-    setTimeout(function(){$(element).removeClass("active");}, 500);
-  });
-}
+    var maxLoops = gameSequence.length;
+    var counter = 0;
+    (function next() {
+        if (counter++ > maxLoops) return;
+
+        setTimeout(function() {
+            $(element + "-sound")[0].play();
+            $(element).addClass("active");
+            setTimeout(function(){$(element).removeClass("active");}, 500);
+            next();
+        }, 100);
+    })();
+  }); 
+} 
   
 
 
 // Compare the user's sequence with the randomly generated sequence
 function sequenceCompare() {
-  if (userSequence.length == gameSequence.length && 
-  userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+  if (userSequence.every(function(v,i) { return v === gameSequence[i]})) { // This line of code is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
     console.log("Match");  // Check if the above worked correctly
     gameScore++; //Increment game score
     $("#score").text(gameScore); //Display game score
@@ -61,8 +72,10 @@ function sequenceCompare() {
         highlightColours();
     } 
   } else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
+    $("#error-sound")[0].play();
     location.reload();
   } else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
+        $("#error-sound")[0].play();
         highlightColours();
   }
 }
