@@ -21,7 +21,10 @@ $(".colour").mousedown(function() {
   userSequence.push("#" + this.id); // The user's selection is added to userSequence
   console.log(userSequence);
   if (userSequence.length == gameSequence.length) {
-  sequenceCompare();}
+    setTimeout(function(){
+      sequenceCompare();
+    }, 500);  
+  }
 });
 $(".colour").mouseup(function() {
   $(this).removeClass("active");
@@ -35,23 +38,17 @@ $("#reset").click(function() {
 
 
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
-//The syntax for this is taken from http://patrickmuff.ch/blog/2014/03/12/for-loop-with-delay-in-javascript/
+//The syntax for this is from https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
-  gameSequence.forEach(function(element) {
-    var maxLoops = gameSequence.length;
-    var counter = 0;
-    (function next() {
-        if (counter++ > maxLoops) return;
-
-        setTimeout(function() {
-            $(element + "-sound")[0].play();
-            $(element).addClass("active");
-            setTimeout(function(){$(element).removeClass("active");}, 500);
-            next();
-        }, 100);
-    })();
-  }); 
-} 
+  gameSequence.forEach(function(element, index){
+    setTimeout(function(){
+      $(element + "-sound")[0].play();
+      $(element).addClass("active");
+      setTimeout(function(){$(element).removeClass("active");}, 500);
+    },
+    1000 * index);
+  });
+}
   
 
 
@@ -65,17 +62,21 @@ function sequenceCompare() {
       if (gameScore == 20) { // The user has achieved the maximum score
         alert("You win!");
         location.reload();
-      } else { // The user has input the correct sequence, but not achieved the maximum score of 20
+      } 
+      else { // The user has input the correct sequence, but not achieved the maximum score of 20
         var rand = colourArray[Math.floor(Math.random() * 4)];
         gameSequence.push(rand); //Add one more random number to the sequence
         console.log(gameSequence);
         highlightColours();
     } 
-  } else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
+  } 
+  else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
     $("#error-sound")[0].play();
     location.reload();
-  } else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
-        $("#error-sound")[0].play();
-        highlightColours();
+  } 
+  else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
+    $("#error-sound")[0].play();
+    userSequence = [];
+    highlightColours();
   }
 }
