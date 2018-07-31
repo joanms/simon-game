@@ -61,13 +61,17 @@ function sequenceCompare() {
     $("#score").text(gameScore); //Display game score
     userSequence = [];  // userSequence is emptied after each round because the user must input the whole sequence in each round
       if (gameScore == 20) { // The user has achieved the maximum score
+        $("#fanfare")[0].load();
+        $("#fanfare")[0].play();
         alert("You win!");
       } 
       else { // The user has input the correct sequence, but not achieved the maximum score of 20
+        setTimeout(function() {
         var rand = colourArray[Math.floor(Math.random() * 4)];
         gameSequence.push(rand); //Add one more random number to the sequence
         console.log(gameSequence);
         highlightColours();
+        }, 1000);
     } 
   } 
   else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
