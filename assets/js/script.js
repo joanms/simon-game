@@ -38,7 +38,7 @@ $("#reset").click(function() {
 
 
 //The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
-//The syntax for this is from https://stackoverflow.com/a/36707123/9179340
+//The syntax for this function is from https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
   gameSequence.forEach(function(element, index){
     setTimeout(function(){
@@ -72,10 +72,12 @@ function sequenceCompare() {
   } 
   else if (("#strict-mode").checked==true) { // If the game is in strict mode, the user must start over after inputting an incorrect sequence
     $("#error-sound")[0].play();
+    alert("Start over!");
     location.reload();
   } 
-  else {                  // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
+  else { // If the game is not in strict mode, the user may try again after inputting an incorrect sequence
     $("#error-sound")[0].play();
+    alert("Try again!");
     userSequence = [];
     highlightColours();
   }
