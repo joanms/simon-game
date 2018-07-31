@@ -2,10 +2,9 @@ var colourArray = ["#blue", "#orange", "#red", "#yellow"];
 var gameSequence = [];
 var userSequence = [];
 var gameScore = 0;
-var i = 0;
 
 
-//When the user clicks the Start button, the first random colour should be added to gameSequence
+//When the user clicks the Start button, the first random colour in gameSequence is highlighted and its sound plays
 $("#start").click(function() {
   var rand = colourArray[Math.floor(Math.random() * 4)];
   gameSequence.push(rand);
@@ -14,8 +13,9 @@ $("#start").click(function() {
 });
 
 
-// When the user clicks a coloured button, it should be highlighted and its sound should play
+// When the user clicks a coloured button, it's highlighted and its sound plays
 $(".colour").mousedown(function() {
+  $("#"+(this.id)+"-sound")[0].load();
   $("#"+(this.id)+"-sound")[0].play();
   $(this).addClass("active");
   userSequence.push("#" + this.id); // The user's selection is added to userSequence
@@ -37,11 +37,12 @@ $("#reset").click(function() {
 });
 
 
-//The colour(s) in gameSequence should be highlighted and the corresponding sound(s) should play
+//The colour(s) in gameSequence should be highlighted one by one in the correct order and the corresponding sound(s) should play
 //The syntax for this function is from https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
   gameSequence.forEach(function(element, index){
     setTimeout(function(){
+      $(element + "-sound")[0].load();
       $(element + "-sound")[0].play();
       $(element).addClass("active");
       setTimeout(function(){$(element).removeClass("active");}, 500);
@@ -61,7 +62,6 @@ function sequenceCompare() {
     userSequence = [];  // userSequence is emptied after each round because the user must input the whole sequence in each round
       if (gameScore == 20) { // The user has achieved the maximum score
         alert("You win!");
-        location.reload();
       } 
       else { // The user has input the correct sequence, but not achieved the maximum score of 20
         var rand = colourArray[Math.floor(Math.random() * 4)];
