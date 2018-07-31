@@ -38,7 +38,7 @@ $("#reset").click(function() {
 
 
 //The colour(s) in gameSequence should be highlighted one by one in the correct order and the corresponding sound(s) should play
-//The syntax for this function is from https://stackoverflow.com/a/36707123/9179340
+//This function was adapted from here: https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
   gameSequence.forEach(function(element, index){
     setTimeout(function(){
