@@ -40,14 +40,14 @@ $("#reset").click(function() {
 //The colour(s) in gameSequence should be highlighted one by one in the correct order and the corresponding sound(s) should play
 //This function was adapted from here: https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
-  gameSequence.forEach(function(element, index){
+  gameSequence.forEach(function(element, index){  //forEach ensures that the array elements are highlighted in the correct order
     setTimeout(function(){
       $(element + "-sound")[0].load();
       $(element + "-sound")[0].play();
       $(element).addClass("active");
       setTimeout(function(){$(element).removeClass("active");}, 500);
     },
-    1000 * index);
+    1000 * index); //This ensures that the array elements are highlighted one after another and not simultaneously
   });
 }
   
