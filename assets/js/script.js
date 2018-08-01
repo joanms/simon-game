@@ -61,9 +61,8 @@ function sequenceCompare() {
     $("#score").text(gameScore); //Display game score
     userSequence = [];  // userSequence is emptied after each round because the user must input the whole sequence in each round
       if (gameScore == 20) { // The user has achieved the maximum score
-        $("#fanfare")[0].load();
         $("#fanfare")[0].play();
-        alert("You win!");
+        alert("You win!"); 
       } 
       else { // The user has input the correct sequence, but not achieved the maximum score of 20
         setTimeout(function() {
