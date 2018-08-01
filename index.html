@@ -43,12 +43,13 @@
     <h1>Simon</h1>
    <div class="row"> 
         <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="">
-              <label class="form-check-label" id="strict-mode" for="defaultCheck1">
-                Strict Mode
-              </label>
+            <div>
+                <input type="checkbox" name="strict-mode" id="strict-mode" />
+                <span class="checkboxtext">
+                  Strict Mode
+                </span>            
             </div>
+            <!--<button type="button" id="strict" class="btn btn-dark">Strict Mode</button>-->
             <button type="button" id="start" class="btn btn-dark">Start</button>
             <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span>
             <button type="button" id="reset" class="btn btn-dark">Reset</button>
