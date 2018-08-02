@@ -76,7 +76,7 @@ function sequenceCompare() {
         }, 1000);
     } 
   } 
-  else if ($("input[type=checkbox]").prop("checked")) { //If the game is in strict mode, the user must start over after inputting an incorrect sequence
+  else if ($("input[type=checkbox]").prop("checked")) { //Code to detect if the Strict Mode checkbox is checked taken from https://medium.com/js-dojo/check-if-a-checkbox-is-checked-with-jquery-2843f97d4954
     $("#error-sound")[0].play();
     alert("Start over!");
     location.reload();
