@@ -4,16 +4,18 @@ var userSequence = [];
 var gameScore = 0;
 
 
-$("#strict").click(function() {
-  $("#strict").toggleClass("active");
-});
-
 //When the user clicks the Start button, the first random colour in gameSequence is highlighted and its sound plays
 $("#start").click(function() {
-  var rand = colourArray[Math.floor(Math.random() * 4)];
-  gameSequence.push(rand);
-  console.log(gameSequence);
-  highlightColours();
+  if (gameScore != 0) {
+        $("#error-sound")[0].play();
+        alert("A game is already in progress. Click 'Reset' and then 'Start' if you wish to start a new one."); //The Start button should only work if a game is not currently in progress
+  }
+  else {
+    var rand = colourArray[Math.floor(Math.random() * 4)];
+    gameSequence.push(rand);
+    console.log(gameSequence);
+    highlightColours();
+  }
 });
 
 
@@ -78,12 +80,12 @@ function sequenceCompare() {
   } 
   else if ($("input[type=checkbox]").prop("checked")) { //Code to detect if the Strict Mode checkbox is checked taken from https://medium.com/js-dojo/check-if-a-checkbox-is-checked-with-jquery-2843f97d4954
     $("#error-sound")[0].play();
-    alert("Start over!");
+    alert("Incorrect. Please click 'Start' to begin a new game."); //If the game is in strict mode, the user must start over after making a mistake
     location.reload();
   } 
-  else { //If the game is not in strict mode, the user may try again after inputting an incorrect sequence
+  else {
     $("#error-sound")[0].play();
-    alert("Try again!");
+    alert("Incorrect. Please attempt the sequence again."); //If the game is not in strict mode, the user may try again after making a mistake
     userSequence = [];
     highlightColours();
   }
