@@ -70,7 +70,7 @@ function sequenceCompare() {
         alert("You win!"); 
       } 
       else { //The user has input the correct sequence, but not achieved the maximum score of 20
-        $("#ding")[0].play();
+        $("#bell")[0].play();
         setTimeout(function() {
         var rand = colourArray[Math.floor(Math.random() * 4)];
         gameSequence.push(rand); //Add one more random number to the sequence

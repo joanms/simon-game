@@ -10,13 +10,13 @@
 
 ### Sound Files
 <ul>
-     <li>S: <a href="https://freesound.org/people/distillerystudio/sounds/327735/">Error_04.wav</a> by <a href="https://freesound.org/people/distillerystudio/">distillerystudio</a> | License: Attribution</li> 
-     <li>S: <a href="https://freesound.org/people/plasterbrain/sounds/397354/">Tada Fanfare F</a> by <a href="https://freesound.org/people/plasterbrain/">plasterbrain</a> | License: Creative Commons</li>
-     <li>S: <a href="https://freesound.org/people/UbikPhonik/sounds/177947/">Ab1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
-     <li>S: <a href="https://freesound.org/people/UbikPhonik/sounds/177948/">C1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
-     <li>S: <a href="https://freesound.org/people/UbikPhonik/sounds/177954/">Eb1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
-     <li>S: <a href="https://freesound.org/people/UbikPhonik/sounds/177943/">F1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
-     <li>S: <a href="https://freesound.org/people/Natty23/sounds/411749/">Bell Ding</a> by <a href="https://freesound.org/people/Natty23/">Natty23</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/distillerystudio/sounds/327735/">Error_04.wav</a> by <a href="https://freesound.org/people/distillerystudio/">distillerystudio</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/plasterbrain/sounds/397354/">Tada Fanfare F</a> by <a href="https://freesound.org/people/plasterbrain/">plasterbrain</a> | License: Creative Commons</li>
+     <li> <a href="https://freesound.org/people/UbikPhonik/sounds/177947/">Ab1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/UbikPhonik/sounds/177948/">C1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/UbikPhonik/sounds/177954/">Eb1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/UbikPhonik/sounds/177943/">F1.aif</a> by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a> | License: Attribution</li> 
+     <li> <a href="https://freesound.org/people/Natty23/sounds/411749/">Bell Ding</a> by <a href="https://freesound.org/people/Natty23/">Natty23</a> | License: Attribution</li> 
 </ul>
 I converted the sound files to MP3 and Ogg.
 
