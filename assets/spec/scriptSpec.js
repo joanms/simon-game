@@ -1,21 +1,23 @@
-describe("My highlight colours function", function() {       
-it("should exist", function() {
+describe('My highlight colours function', function() {       
+it('should exist', function() {
               expect(highlightColours).toBeDefined();
             }); 
       });
       
       //It should highlight all colours in gameSequence
       
-describe("My sequence comparison function", function() {       
-it("should exist", function() {
+describe('My sequence comparison function', function() {       
+it('should exist', function() {
               expect(sequenceCompare).toBeDefined();
             }); 
       });
       
       //It should generate an error notification when gameSequence and userSequence don’t match
 
+
+//Jasmine clock code to test timeout and interval functions from https://jasmine.github.io/tutorials/your_first_suite
 beforeEach(function() {
-    timerCallback = jasmine.createSpy("timerCallback");
+    timerCallback = jasmine.createSpy('timerCallback');
     jasmine.clock().install();
   });
   
@@ -23,7 +25,7 @@ afterEach(function() {
     jasmine.clock().uninstall();
   });
   
-it("causes a timeout to be called synchronously", function() {
+it('causes a timeout to be called synchronously', function() {
     setTimeout(function() {
       timerCallback();
     }, 100);
@@ -35,19 +37,19 @@ it("causes a timeout to be called synchronously", function() {
     expect(timerCallback).toHaveBeenCalled();
   });
 
- it("causes an interval to be called synchronously", function() {
-    setInterval(function() {
-      timerCallback();
-    }, 100);
+//  it('causes an interval to be called synchronously', function() {
+//     setInterval(function() {
+//       timerCallback();
+//     }, 100);
 
-    expect(timerCallback).not.toHaveBeenCalled();
+//     expect(timerCallback).not.toHaveBeenCalled();
 
-    jasmine.clock().tick(101);
-    expect(timerCallback.calls.count()).toEqual(1);
+//     jasmine.clock().tick(101);
+//     expect(timerCallback.calls.count()).toEqual(1);
 
-    jasmine.clock().tick(50);
-    expect(timerCallback.calls.count()).toEqual(1);
+//     jasmine.clock().tick(50);
+//     expect(timerCallback.calls.count()).toEqual(1);
 
-    jasmine.clock().tick(50);
-    expect(timerCallback.calls.count()).toEqual(2);
-  });
+//     jasmine.clock().tick(50);
+//     expect(timerCallback.calls.count()).toEqual(2);
+//   });

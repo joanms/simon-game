@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
     
-    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel='stylesheet' href='assets/css/bootstrap-grid.min.css' type='text/css' />
+    <link rel='stylesheet' href='assets/css/bootstrap-reboot.min.css' type='text/css' />
+    <link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css' />
+    <link rel='stylesheet' href='assets/css/style.css' type='text/css' />
 
     <title>Simon Game</title>
     
-    <audio id="blue-sound">
-        <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3"></source>
-	    <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg"></source>
+    <audio id='blue-sound'>
+        <source src='assets/audio/mp3/177947__ubikphonik__ab1.mp3'></source>
+	    <source src='assets/audio/ogg/177947__ubikphonik__ab1.ogg'></source>
     </audio>
-    <audio id="red-sound">
-        <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3"></source>
-	    <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg"></source>
+    <audio id='red-sound'>
+        <source src='assets/audio/mp3/177948__ubikphonik__c1.mp3'></source>
+	    <source src='assets/audio/ogg/177948__ubikphonik__c1.ogg'></source>
     </audio>  
-    <audio id="yellow-sound">
-        <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3"></source>
-	    <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg"></source>
+    <audio id='yellow-sound'>
+        <source src='assets/audio/mp3/177954__ubikphonik__eb1.mp3'></source>
+	    <source src='assets/audio/ogg/177954__ubikphonik__eb1.ogg'></source>
     </audio>  
-    <audio id="orange-sound">
-        <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3"></source>
-	    <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg"></source>
+    <audio id='orange-sound'>
+        <source src='assets/audio/mp3/177943__ubikphonik__f1.mp3'></source>
+	    <source src='assets/audio/ogg/177943__ubikphonik__f1.ogg'></source>
     </audio>
-    <audio id="error-sound">
-        <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3"></source>
-	    <source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg"></source>
+    <audio id='error-sound'>
+        <source src='assets/audio/mp3/327735__distillerystudio__error-04.mp3'></source>
+	    <source src='assets/audio/ogg/327735__distillerystudio__error-04.ogg'></source>
     </audio>
-        <audio id="fanfare">
-        <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3"></source>
-	    <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg"></source>
+        <audio id='fanfare'>
+        <source src='assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3'></source>
+	    <source src='assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg'></source>
     </audio>
-    <audio id="bell">
-        <source src="assets/audio/mp3/411749__natty23__bell-ding.mp3"></source>
-	    <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg"></source>
+    <audio id='bell'>
+        <source src='assets/audio/mp3/411749__natty23__bell-ding.mp3'></source>
+	    <source src='assets/audio/ogg/411749__natty23__bell-ding.ogg'></source>
     </audio>
 
 
@@ -44,67 +44,67 @@
 
 <body>
 
-<div class="container-fluid game-container">
+<div class='container-fluid game-container'>
     <h1>Simon</h1>
-   <div class="row"> 
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+   <div class='row'> 
+        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
             <div>
-                <input type="checkbox" name="strict-mode" id="strict-mode" />
-                <span class="checkboxtext">
+                <input type='checkbox' name='strict-mode' id='strict-mode' />
+                <span class='checkboxtext'>
                   Strict Mode
                 </span>            
             </div>
-            <!--<button type="button" id="strict" class="btn btn-dark">Strict Mode</button>-->
-            <button type="button" id="start" class="btn btn-dark">Start</button>
-            <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span>
-            <button type="button" id="reset" class="btn btn-dark">Reset</button>
+            <!--<button type='button' id='strict' class='btn btn-dark'>Strict Mode</button>-->
+            <button type='button' id='start' class='btn btn-dark'>Start</button>
+            <button type='button' class='btn btn-light'>Score:<span id='score' class='badge badge-light'>0</span>
+            <button type='button' id='reset' class='btn btn-dark'>Reset</button>
             </button>
         </div>
     </div>    
 
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-            <div class="row">
-                <div id="blue" class="colour"></div>
-                <div id="red" class="colour"></div>    
+        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
+            <div class='row'>
+                <div id='blue' class='colour'></div>
+                <div id='red' class='colour'></div>    
             </div>
-            <div class="row">
-                <div id="yellow" class="colour"></div>    
-                <div id="orange" class="colour"></div>
+            <div class='row'>
+                <div id='yellow' class='colour'></div>    
+                <div id='orange' class='colour'></div>
             </div> 
         </div>
         
     </div>
     
 
-        <footer class="container-fluid">This game uses these sounds from freesound.org:
+        <footer class='container-fluid'>This game uses these sounds from freesound.org:
             <ul>
-                <li><a href="https://freesound.org/people/distillerystudio/sounds/327735/">Error_04.wav</a> 
-                by <a href="https://freesound.org/people/distillerystudio/">distillerystudio</a></li> 
-                <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/">Tada Fanfare F</a> 
-                by <a href="https://freesound.org/people/plasterbrain/">plasterbrain</a></li> 
-                <li><a href="https://freesound.org/people/UbikPhonik/sounds/177947/">Ab1.aif</a>, 
-                <a href="https://freesound.org/people/UbikPhonik/sounds/177948/">C1.aif</a>, 
-                <a href="https://freesound.org/people/UbikPhonik/sounds/177954/">Eb1.aif</a> 
-                <a href="https://freesound.org/people/UbikPhonik/sounds/177943/">F1.aif</a> 
-                by <a href="https://freesound.org/people/UbikPhonik/">UbikPhonik</a></li> and
-                <li><a href="https://freesound.org/people/Natty23/sounds/411749/">Bell Ding</a> 
-                by <a href="https://freesound.org/people/Natty23/">Natty23</a></li> 
+                <li><a href='https://freesound.org/people/distillerystudio/sounds/327735/'>Error_04.wav</a> 
+                by <a href='https://freesound.org/people/distillerystudio/'>distillerystudio</a></li> 
+                <li><a href='https://freesound.org/people/plasterbrain/sounds/397354/'>Tada Fanfare F</a> 
+                by <a href='https://freesound.org/people/plasterbrain/'>plasterbrain</a></li> 
+                <li><a href='https://freesound.org/people/UbikPhonik/sounds/177947/'>Ab1.aif</a>, 
+                <a href='https://freesound.org/people/UbikPhonik/sounds/177948/'>C1.aif</a>, 
+                <a href='https://freesound.org/people/UbikPhonik/sounds/177954/'>Eb1.aif</a> 
+                <a href='https://freesound.org/people/UbikPhonik/sounds/177943/'>F1.aif</a> 
+                by <a href='https://freesound.org/people/UbikPhonik/'>UbikPhonik</a></li> and
+                <li><a href='https://freesound.org/people/Natty23/sounds/411749/'>Bell Ding</a> 
+                by <a href='https://freesound.org/people/Natty23/'>Natty23</a></li> 
 
             </ul>
         </footer>
 
     <!--Load Jasmine Framework-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine-html.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/boot.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine-html.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/boot.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.css' />
 
     <!--Load Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script type='text/javascript' src='assets/js/script.js'></script>
 
     Load Tests
-    <script type="text/javascript" src="assets/spec/scriptSpec.js"></script>
+    <script type='text/javascript' src='assets/spec/scriptSpec.js'></script>
 
 </body>
 </html>
