@@ -14,9 +14,9 @@ it("should exist", function() {
       
       //It should generate an error notification when gameSequence and userSequence don’t match
 
-var spyEvent = spyOnEvent("#start", "click")
-$("#start").click()
-expect("click").toHaveBeenTriggeredOn("#start")
+// var spyEvent = spyOnEvent("#start", "click")
+// $("#start").click()
+// expect("click").toHaveBeenTriggeredOn("#start")
 
 
       
