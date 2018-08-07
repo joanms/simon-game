@@ -36,20 +36,3 @@ it('causes a timeout to be called synchronously', function() {
 
     expect(timerCallback).toHaveBeenCalled();
   });
-
-//  it('causes an interval to be called synchronously', function() {
-//     setInterval(function() {
-//       timerCallback();
-//     }, 100);
-
-//     expect(timerCallback).not.toHaveBeenCalled();
-
-//     jasmine.clock().tick(101);
-//     expect(timerCallback.calls.count()).toEqual(1);
-
-//     jasmine.clock().tick(50);
-//     expect(timerCallback.calls.count()).toEqual(1);
-
-//     jasmine.clock().tick(50);
-//     expect(timerCallback.calls.count()).toEqual(2);
-//   });
