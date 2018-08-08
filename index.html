@@ -1,102 +1,96 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
     
-    <link rel='stylesheet' href='assets/css/bootstrap-grid.min.css' type='text/css' />
-    <link rel='stylesheet' href='assets/css/bootstrap-reboot.min.css' type='text/css' />
-    <link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css' />
-    <link rel='stylesheet' href='assets/css/style.css' type='text/css' />
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
     <title>Simon Game</title>
     
-    <audio id='blue-sound'>
-        <source src='assets/audio/mp3/177947__ubikphonik__ab1.mp3'></source>
-	    <source src='assets/audio/ogg/177947__ubikphonik__ab1.ogg'></source>
+    <audio id="blue-sound">
+        <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3">
+	    <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg">
     </audio>
-    <audio id='red-sound'>
-        <source src='assets/audio/mp3/177948__ubikphonik__c1.mp3'></source>
-	    <source src='assets/audio/ogg/177948__ubikphonik__c1.ogg'></source>
+    <audio id="red-sound">
+        <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3">
+	    <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg">
     </audio>  
-    <audio id='yellow-sound'>
-        <source src='assets/audio/mp3/177954__ubikphonik__eb1.mp3'></source>
-	    <source src='assets/audio/ogg/177954__ubikphonik__eb1.ogg'></source>
+    <audio id="yellow-sound">
+        <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3">
+	    <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg">
     </audio>  
-    <audio id='orange-sound'>
-        <source src='assets/audio/mp3/177943__ubikphonik__f1.mp3'></source>
-	    <source src='assets/audio/ogg/177943__ubikphonik__f1.ogg'></source>
+    <audio id="orange-sound">
+        <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3">
+	    <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg">
     </audio>
-    <audio id='error-sound'>
-        <source src='assets/audio/mp3/327735__distillerystudio__error-04.mp3'></source>
-	    <source src='assets/audio/ogg/327735__distillerystudio__error-04.ogg'></source>
+    <audio id="error-sound">
+        <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3">
+	    <source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg">
     </audio>
-        <audio id='fanfare'>
-        <source src='assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3'></source>
-	    <source src='assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg'></source>
+        <audio id="fanfare">
+        <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3">
+	    <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg">
     </audio>
-    <audio id='bell'>
-        <source src='assets/audio/mp3/411749__natty23__bell-ding.mp3'></source>
-	    <source src='assets/audio/ogg/411749__natty23__bell-ding.ogg'></source>
+    <audio id="bell">
+        <source src="assets/audio/mp3/411749__natty23__bell-ding.mp3">
+	    <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg">
     </audio>
 
 
-
-</head>
-
-<body>
-
-<div class='container-fluid game-container'>
-   <div class='row'> 
-        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
+<div class="container-fluid game-container">
+   <div class="row"> 
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
             <h1>Simon</h1>
         </div>
     </div>    
-   <div class='row'> 
-        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
-                <input type='checkbox' name='strict-mode' id='strict-mode' />
-                <span class='checkboxtext'>
+   <div class="row"> 
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+                <input type="checkbox" name="strict-mode" id="strict-mode" />
+                <span class="checkboxtext">
                   Strict Mode
                 </span>            
-            <button type='button' id='start' class='btn btn-dark'>Start</button>
-            <button type='button' class='btn btn-light'>Score:<span id='score' class='badge badge-light'>0</span>
-            <button type='button' id='reset' class='btn btn-dark'>Reset</button>
-            </button>
+            <button type="button" id="start" class="btn btn-dark">Start</button>
+            <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span></button>
+            <button type="button" id="reset" class="btn btn-dark">Reset</button>
         </div>
     </div>    
 
-    <div class='row'>
-        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
-                <div id='blue' class='colour'></div>
-                <div id='red' class='colour'></div>    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+                <div id="blue" class="colour"></div>
+                <div id="red" class="colour"></div>    
         </div>
     </div>
-    <div class='row'>
-        <div class='col-xs-12 col-sm-12 col-md-4 offset-md-4'>
-                <div id='yellow' class='colour'></div>    
-                <div id='orange' class='colour'></div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
+                <div id="yellow" class="colour"></div>    
+                <div id="orange" class="colour"></div>
             </div> 
         </div>
     </div>
     
 
-        <footer class='container-fluid'>This game uses these sounds from freesound.org:
+        <footer class="container-fluid">This game uses these sounds from freesound.org:
             <ul>
-                <li><a href='https://freesound.org/people/distillerystudio/sounds/327735/' target='_blank'>Error_04.wav</a> 
-                by <a href='https://freesound.org/people/distillerystudio/' target='_blank'>distillerystudio</a></li> 
-                <li><a href='https://freesound.org/people/plasterbrain/sounds/397354/' target='_blank'>Tada Fanfare F</a> 
-                by <a href='https://freesound.org/people/plasterbrain/' target='_blank'>plasterbrain</a></li> 
-                <li><a href='https://freesound.org/people/UbikPhonik/sounds/177947/' target='_blank'>Ab1.aif</a>, 
-                <a href='https://freesound.org/people/UbikPhonik/sounds/177948/' target='_blank'>C1.aif</a>, 
-                <a href='https://freesound.org/people/UbikPhonik/sounds/177954/' target='_blank'>Eb1.aif</a> 
-                <a href='https://freesound.org/people/UbikPhonik/sounds/177943/' target='_blank'>F1.aif</a> 
-                by <a href='https://freesound.org/people/UbikPhonik/' target='_blank'>UbikPhonik</a></li> and
-                <li><a href='https://freesound.org/people/Natty23/sounds/411749/' target='_blank'>Bell Ding</a> 
-                by <a href='https://freesound.org/people/Natty23/' target='_blank'>Natty23</a></li> 
+                <li><a href="https://freesound.org/people/UbikPhonik/sounds/177947/" target="_blank">Ab1.aif</a>, 
+                <a href="https://freesound.org/people/UbikPhonik/sounds/177948/" target="_blank">C1.aif</a>, 
+                <a href="https://freesound.org/people/UbikPhonik/sounds/177954/" target="_blank">Eb1.aif</a> 
+                <a href="https://freesound.org/people/UbikPhonik/sounds/177943/" target="_blank">F1.aif</a> 
+                by <a href="https://freesound.org/people/UbikPhonik/" target="_blank">UbikPhonik</a></li>
+                <li><a href="https://freesound.org/people/Natty23/sounds/411749/" target="_blank">Bell Ding</a> 
+                by <a href="https://freesound.org/people/Natty23/" target="_blank">Natty23</a></li> 
+                <li><a href="https://freesound.org/people/distillerystudio/sounds/327735/" target="_blank">Error_04.wav</a> 
+                by <a href="https://freesound.org/people/distillerystudio/" target="_blank">distillerystudio</a></li> 
+                <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/" target="_blank">Tada Fanfare F</a> 
+                by <a href="https://freesound.org/people/plasterbrain/" target="_blank">plasterbrain</a></li> 
 
             </ul>
         </footer>
 
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script type='text/javascript' src='assets/js/script.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>

@@ -31,3 +31,10 @@ I converted the sound files to MP3 and Ogg.
 <li>Strict mode: the game starts over</li></li></ul></ol>
 The game ends when the user’s score reaches 20. The user can start over at any time by clicking the “Reset” button.
 
+## Testing
+<ul>
+<li> <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</li>
+<li> <a href="https://validator.w3.org/">W3C Markup Validator</li>
+<li> <a href="http://jshint.com/">JS Hint</li>
+<li> <a href="http://www.jslint.com//">JS Lint</li>
+<li> Jasmine</li>

@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Exo+2');
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Exo+2");
  
 body {
     background-color: lightgrey;
 } 
  
 h1 {
-    font-family: 'Audiowide', cursive;
+    font-family: "Audiowide", cursive;
     font-size: 160px;
 }
 
 
 /* Buttons */
 .btn {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 24px;
     margin: 10px;
 }
@@ -28,13 +28,13 @@ input[type=checkbox]
 }
 
 .checkboxtext {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 24px;
     margin-left: 5px;
 }
 
 #score {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 30px;
     margin-left: 10px;
 }
