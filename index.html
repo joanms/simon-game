@@ -40,17 +40,18 @@
 
 
 <div class="container-fluid game-container">
+    
+    <h1>Simon</h1>
+            
    <div class="row"> 
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-            <h1>Simon</h1>
+        <div class="col-md-4 offset-md-4" align=center>
+            <input type="checkbox" name="strict-mode" id="strict-mode" />
+            <span class="checkboxtext">Strict Mode</span>            
         </div>
     </div>    
+
    <div class="row"> 
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-                <input type="checkbox" name="strict-mode" id="strict-mode" />
-                <span class="checkboxtext">
-                  Strict Mode
-                </span>            
+        <div class="col-md-4 offset-md-4" align=center>
             <button type="button" id="start" class="btn btn-dark">Start</button>
             <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span></button>
             <button type="button" id="reset" class="btn btn-dark">Reset</button>
@@ -58,21 +59,25 @@
     </div>    
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-                <div id="blue" class="colour"></div>
-                <div id="red" class="colour"></div>    
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-4">
-                <div id="yellow" class="colour"></div>    
-                <div id="orange" class="colour"></div>
-            </div> 
+        <div class="col-md-4 offset-md-4" align=center>
+            <div id="blue" class="colour"></div>
+            <div id="red" class="colour"></div>    
         </div>
     </div>
     
+    <div class="row">
+        <div class="col-md-4 offset-md-4" align=center>
+            <div id="yellow" class="colour"></div>    
+            <div id="orange" class="colour"></div>
+        </div> 
+    </div>
+</div>
+    
 
-        <footer class="container-fluid">This game uses these sounds from freesound.org:
+        <footer class="container-fluid sound-sources">
+            <div class="row"> 
+                <div class="col-md-4 offset-md-4">
+            This game uses these sounds from freesound.org:
             <ul>
                 <li><a href="https://freesound.org/people/UbikPhonik/sounds/177947/" target="_blank">Ab1.aif</a>, 
                 <a href="https://freesound.org/people/UbikPhonik/sounds/177948/" target="_blank">C1.aif</a>, 
@@ -85,8 +90,9 @@
                 by <a href="https://freesound.org/people/distillerystudio/" target="_blank">distillerystudio</a></li> 
                 <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/" target="_blank">Tada Fanfare F</a> 
                 by <a href="https://freesound.org/people/plasterbrain/" target="_blank">plasterbrain</a></li> 
-
             </ul>
+            </div>
+            </div>
         </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
