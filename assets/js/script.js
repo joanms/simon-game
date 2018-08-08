@@ -17,7 +17,9 @@ $('#start').click(function() {
     highlightColours();
   }
 });
-
+$('#start').mouseup(function() {
+  $(this).removeClass('active');
+});
 
 //When the user clicks a coloured button, it's highlighted and its sound plays.
 $('.colour').mousedown(function() {
