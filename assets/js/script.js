@@ -82,7 +82,7 @@ function sequenceCompare() {
         gameSequence.push(rand); //Add one more random number to the sequence.
         console.log(gameSequence);
         highlightColours();
-        }, 1000);
+        }, 500);
     } 
   } 
 //Code for the following line is from https://medium.com/js-dojo/check-if-a-checkbox-is-checked-with-jquery-2843f97d4954
