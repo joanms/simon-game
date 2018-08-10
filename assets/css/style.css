@@ -10,12 +10,21 @@ h1 {
     font-size: 140px;
 }
 
+h2 {
+    text-align: left;
+    font-family: "Audiowide", cursive;
+    font-size: 30px;
+}
+
 .game-container {
     height: 100vh;
     text-align: center;
 }
 
-
+.footer-text {
+    font-family: "Exo 2", sans-serif;
+    font-size: 15;
+}
 
 /* Buttons */
 
