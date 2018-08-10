@@ -16,15 +16,23 @@ it("should exist", function() {
 
 //Buttons
 //Code for detecting click events is from https://stackoverflow.com/questions/23486444/error-on-jasmine-expected-event-click-to-have-been-triggered-on-div-id/23492830    
+
 describe("Start button", function() { 
     it("should be clickable", function() {
-        setFixtures('<btn id="start"></btn>');
+        setFixtures('<button id="start"></button>');
         $('#start').on('click', function () { console.log("CLICK EVENT"); });
         var spyEvent = spyOnEvent('#start', 'click');
         $('#start').trigger('click');
         expect(spyEvent).toHaveBeenTriggered();
     });
-    //WHEN CLICKED, IT SHOULD ADD ONE ELEMENT TO gameSequence
+        it("should start the game sequence", function() {
+        setFixtures('<button id="start"></button>');
+        $('#start').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#start', 'click');
+        $('#start').trigger('click');
+        expect(gameSequence.length).toBeGreaterThanOrEqual(0);
+    });
+
 });
 
 describe("Reset button", function() {       
@@ -34,8 +42,15 @@ describe("Reset button", function() {
         var spyEvent = spyOnEvent('#reset', 'click');
         $('#reset').trigger('click');
         expect(spyEvent).toHaveBeenTriggered();
+    });
+        it("should reload the page", function() {
+        setFixtures('<btn id="reset"></btn>');
+        $('#reset').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#reset', 'click');
+        $('#reset').trigger('click');
+        expect(gameSequence.length).toEqual(0);
     }); 
-    //WHEN CLICKED, IT SHOULD RELOAD THE PAGE
+
 });
 
 
