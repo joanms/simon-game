@@ -14,6 +14,32 @@ it("should exist", function() {
       
       //It should generate an error notification when gameSequence and userSequence don’t match
 
+//Buttons
+//Code for detecting click events is from https://stackoverflow.com/questions/23486444/error-on-jasmine-expected-event-click-to-have-been-triggered-on-div-id/23492830    
+describe("Start button", function() { 
+    it("should be clickable", function() {
+        setFixtures('<btn id="start"></btn>');
+        $('#start').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#start', 'click');
+        $('#start').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+    });
+    //WHEN CLICKED, IT SHOULD ADD ONE ELEMENT TO gameSequence
+});
+
+describe("Reset button", function() {       
+    it("should be clickable", function() {
+        setFixtures('<btn id="reset"></btn>');
+        $('#reset').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#reset', 'click');
+        $('#reset').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+    }); 
+    //WHEN CLICKED, IT SHOULD RELOAD THE PAGE
+});
+
+
+
 
 //Jasmine clock code to test timeout and interval functions from https://jasmine.github.io/tutorials/your_first_suite
 beforeEach(function() {

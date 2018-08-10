@@ -23,6 +23,7 @@ h2 {
 .footer-text {
     font-family: "Exo 2", sans-serif;
     font-size: 20px;
+    padding-top: 50px;
 }
 
 /* Buttons */
@@ -37,7 +38,7 @@ h2 {
 
 .checkboxtext {
     font-family: "Exo 2", sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     margin-left: 10px;
 }
 

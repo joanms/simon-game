@@ -20,7 +20,7 @@
 </ul>
 I converted the sound files to MP3 and Ogg.
 
-## How to Play
+## Playing the Game
 <ol>
 <li>When the user clicks “Start”, a random coloured button is highlighted and a sound plays. Each button has a unique sound.</li>
 <li>If the user clicks the same button, the user score increases by 1, and the same coloured button plus one random button is highlighted.</li>

@@ -9,7 +9,7 @@ $("#start").click(function() {
   //The Start button should only work if a game is not currently in progress.
   if (gameScore != 0) {
         $("#error-sound")[0].play();
-        alert("A game is already in progress. If you wish to start a new one, please click Reset and then Start."); 
+        alert("A game is already in progress. If you want to start a new one, please click Reset and then Start."); 
   }
   else {
     var rand = colourArray[Math.floor(Math.random() * 4)];
