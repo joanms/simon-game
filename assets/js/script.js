@@ -6,20 +6,11 @@ var gameScore = 0;
 
 //When the user clicks the Start button, the first random colour in gameSequence is highlighted and its sound plays.
 $("#start").click(function() { 
-  //The Start button should only work if a game is not currently in progress.
-  if (gameScore != 0) {
-        $("#error-sound")[0].play();
-        alert("A game is already in progress. If you want to start a new one, please click Reset and then Start."); 
-  }
-  else {
     var rand = colourArray[Math.floor(Math.random() * 4)];
     gameSequence.push(rand);
+    $("#start").attr("disabled", "disabled");   //The Start button is disabled once the game has started. The user must click Reset and then Start to start a new game.
     console.log(gameSequence);
     highlightColours();
-  }
-});
-$(".btn").mouseup(function(){ //Code to remove focus from button on mouseup from https://stackoverflow.com/a/23444942/9179340
-    $(this).blur();
 });
 
 

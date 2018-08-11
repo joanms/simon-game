@@ -30,7 +30,7 @@ describe("Start button", function() {
         $('#start').on('click', function () { console.log("CLICK EVENT"); });
         var spyEvent = spyOnEvent('#start', 'click');
         $('#start').trigger('click');
-        expect(gameSequence.length).toBeGreaterThanOrEqual(0);
+        expect(gameSequence.length).toBeGreaterThan(0);
     });
 
 });
