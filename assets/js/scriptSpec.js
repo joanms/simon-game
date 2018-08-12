@@ -1,18 +1,22 @@
 describe("My highlight colours function", function() {       
 it("should exist", function() {
-              expect(highlightColours).toBeDefined();
-            }); 
-      });
-      
-      //It should highlight all colours in gameSequence
-      
+    expect(highlightColours).toBeDefined();
+    }); 
+});
+
+
 describe("My sequence comparison function", function() {       
 it("should exist", function() {
-              expect(sequenceCompare).toBeDefined();
-            }); 
-      });
-      
-      //It should generate an error notification when gameSequence and userSequence don’t match
+    expect(sequenceCompare).toBeDefined();
+    }); 
+});
+    it("should show an error alert if the user makes a mistake", function (){
+        
+    });  
+    it("should end the game when the score reaches 20", function (){
+    expect(gameScore).toBeLessThanOrEqual(20);    
+    });  
+   
 
 //Buttons
 //Code for detecting click events is from https://stackoverflow.com/questions/23486444/error-on-jasmine-expected-event-click-to-have-been-triggered-on-div-id/23492830    
@@ -25,14 +29,6 @@ describe("Start button", function() {
         $('#start').trigger('click');
         expect(spyEvent).toHaveBeenTriggered();
     });
-        it("should start the game sequence", function() {
-        setFixtures('<button id="start"></button>');
-        $('#start').on('click', function () { console.log("CLICK EVENT"); });
-        var spyEvent = spyOnEvent('#start', 'click');
-        $('#start').trigger('click');
-        expect(gameSequence.length).toBeGreaterThan(0);
-    });
-
 });
 
 describe("Reset button", function() {       
@@ -48,12 +44,20 @@ describe("Reset button", function() {
         $('#reset').on('click', function () { console.log("CLICK EVENT"); });
         var spyEvent = spyOnEvent('#reset', 'click');
         $('#reset').trigger('click');
-        expect(gameSequence.length).toEqual(0);
+        expect(gameSequence).toEqual([]);
     }); 
 
 });
 
-
+describe("Coloured buttons", function() { 
+    it("should be clickable", function() {
+        setFixtures('<button class="colour"></button>');
+        $('.colour').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('.colour', 'click');
+        $('.colour').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+    });
+});
 
 
 //Jasmine clock code to test timeout and interval functions from https://jasmine.github.io/tutorials/your_first_suite
