@@ -1,3 +1,7 @@
+/*Code for Jasmine Clock is from https://jasmine.github.io/tutorials/your_first_suite
+with a modification to the install and uninstall code from 
+https://github.com/gruntjs/grunt-contrib-jasmine/issues/213*/
+
 describe("My highlight colours function", function() {       
 it("should exist", function() {
     expect(highlightColours).toBeDefined();
