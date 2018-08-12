@@ -2,20 +2,59 @@ describe("My highlight colours function", function() {
 it("should exist", function() {
     expect(highlightColours).toBeDefined();
     }); 
-});
+
+        beforeEach(function() {
+        timerCallback = jasmine.createSpy("timerCallback");
+          jasmine.clock().uninstall();
+          jasmine.clock().install();
+        });
+          
+        it("should cause a timeout to be called synchronously", function() {
+            setTimeout(function() {
+              timerCallback();
+            }, 100);
+            
+        expect(timerCallback).not.toHaveBeenCalled();
+        
+            jasmine.clock().tick(101);
+        
+            expect(timerCallback).toHaveBeenCalled();
+          });
+          
+        });
 
 
 describe("My sequence comparison function", function() {       
-it("should exist", function() {
-    expect(sequenceCompare).toBeDefined();
-    }); 
-});
-    it("should show an error alert if the user makes a mistake", function (){
+    it("should exist", function() {
+        expect(sequenceCompare).toBeDefined();
+        }); 
         
-    });  
-    it("should end the game when the score reaches 20", function (){
-    expect(gameScore).toBeLessThanOrEqual(20);    
-    });  
+        it("should show an error alert if the user makes a mistake", function (){
+            
+        });  
+        it("should end the game when the score reaches 20", function (){
+        expect(gameScore).toBeLessThanOrEqual(20);    
+        });
+        
+        beforeEach(function() {
+        timerCallback = jasmine.createSpy("timerCallback");
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+        });
+          
+        it("should cause a timeout to be called synchronously", function() {
+            setTimeout(function() {
+              timerCallback();
+            }, 100);
+            
+        expect(timerCallback).not.toHaveBeenCalled();
+        
+            jasmine.clock().tick(101);
+        
+            expect(timerCallback).toHaveBeenCalled();
+          });
+      
+});
    
 
 //Buttons
@@ -58,26 +97,3 @@ describe("Coloured buttons", function() {
         expect(spyEvent).toHaveBeenTriggered();
     });
 });
-
-
-//Jasmine clock code to test timeout and interval functions from https://jasmine.github.io/tutorials/your_first_suite
-beforeEach(function() {
-    timerCallback = jasmine.createSpy("timerCallback");
-    jasmine.clock().install();
-  });
-  
-afterEach(function() {
-    jasmine.clock().uninstall();
-  });
-  
-it("causes a timeout to be called synchronously", function() {
-    setTimeout(function() {
-      timerCallback();
-    }, 100);
-
-    expect(timerCallback).not.toHaveBeenCalled();
-
-    jasmine.clock().tick(101);
-
-    expect(timerCallback).toHaveBeenCalled();
-  });
