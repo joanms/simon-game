@@ -68,7 +68,6 @@ describe("Start button", function() {
         $('#start').trigger('click');
         expect(spyEvent).toHaveBeenTriggered();
     });
-    
 });
 
 describe("Reset button", function() {       
@@ -80,7 +79,6 @@ describe("Reset button", function() {
         expect(spyEvent).toHaveBeenTriggered();
         expect(gameSequence).toEqual([]);
     }); 
-
 });
 
 describe("Coloured buttons", function() { 
