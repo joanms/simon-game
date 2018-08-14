@@ -1,6 +1,6 @@
-/*Code for Jasmine Clock is from https://jasmine.github.io/tutorials/your_first_suite
+/* Code for Jasmine Clock is from https://jasmine.github.io/tutorials/your_first_suite
 with a modification to the install and uninstall code from 
-https://github.com/gruntjs/grunt-contrib-jasmine/issues/213*/
+https://github.com/gruntjs/grunt-contrib-jasmine/issues/213 */
 
 beforeEach(function() {
 timerCallback = jasmine.createSpy("timerCallback");
@@ -34,11 +34,6 @@ describe("My sequence comparison function", function() {
         expect(sequenceCompare).toBeDefined();
         }); 
         
-        it("should show an error alert if the user makes a mistake", function (){
-            // spyOn(window, 'alert');
-            // expect(window.alert).toHaveBeenCalledWith("Incorrect. Please attempt the sequence again.");
-        });
-        
         it("should end the game when the score reaches 20", function (){
             expect(gameScore).toBeLessThanOrEqual(20);
         });
@@ -61,33 +56,33 @@ describe("My sequence comparison function", function() {
 //Code for detecting click events is from 
 // https://stackoverflow.com/questions/23486444/error-on-jasmine-expected-event-click-to-have-been-triggered-on-div-id/23492830    
 
-// describe("Start button", function() { 
-//     it("should be clickable", function() {
-//         setFixtures('<button id="start"></button>');
-//         $('#start').on('click', function () { console.log("CLICK EVENT"); });
-//         var spyEvent = spyOnEvent('#start', 'click');
-//         $('#start').trigger('click');
-//         expect(spyEvent).toHaveBeenTriggered();
-//     });
-// });
+describe("Start button", function() { 
+    it("should be clickable", function() {
+        setFixtures('<button id="start"></button>');
+        $('#start').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#start', 'click');
+        $('#start').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+    });
+});
 
-// describe("Reset button", function() {       
-//     it("should reload the page", function() {
-//         setFixtures('<btn id="reset"></btn>');
-//         $('#reset').on('click', function () { console.log("CLICK EVENT"); });
-//         var spyEvent = spyOnEvent('#reset', 'click');
-//         $('#reset').trigger('click');
-//         expect(spyEvent).toHaveBeenTriggered();
-//         expect(gameSequence).toEqual([]);
-//     }); 
-// });
+describe("Reset button", function() {       
+    it("should reload the page", function() {
+        setFixtures('<btn id="reset"></btn>');
+        $('#reset').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('#reset', 'click');
+        $('#reset').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+        expect(gameSequence).toEqual([]);
+    }); 
+});
 
-// describe("Coloured buttons", function() { 
-//     it("should be clickable", function() {
-//         setFixtures('<button class="colour"></button>');
-//         $('.colour').on('click', function () { console.log("CLICK EVENT"); });
-//         var spyEvent = spyOnEvent('.colour', 'click');
-//         $('.colour').trigger('click');
-//         expect(spyEvent).toHaveBeenTriggered();
-//     });
-// });
+describe("Coloured buttons", function() { 
+    it("should be clickable", function() {
+        setFixtures('<button class="colour"></button>');
+        $('.colour').on('click', function () { console.log("CLICK EVENT"); });
+        var spyEvent = spyOnEvent('.colour', 'click');
+        $('.colour').trigger('click');
+        expect(spyEvent).toHaveBeenTriggered();
+    });
+});
