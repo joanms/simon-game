@@ -8,7 +8,7 @@ var gameScore = 0;
 $("#start").click(function() { 
     var rand = colourArray[Math.floor(Math.random() * 4)];
     gameSequence.push(rand);
-    $("#start").attr("disabled", "disabled");   //The Start button is disabled once the game has started. The user must click Reset and then Start to start a new game.
+    $("#start").attr("disabled", "disabled"); //The Start button is disabled once the game has started. The user must click Reset and then Start to start a new game.
     console.log(gameSequence);
     highlightColours();
 });
