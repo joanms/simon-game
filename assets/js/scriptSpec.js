@@ -30,13 +30,16 @@ describe("My highlight colours function", function() {
 
 
 describe("My sequence comparison function", function() {       
-    it("should exist", function() {
-        expect(sequenceCompare).toBeDefined();
-        }); 
+        it("should exist", function() {
+            expect(sequenceCompare).toBeDefined();
+            }); 
         
-        it("should end the game when the score reaches 20", function (){
-            expect(gameScore).toBeLessThanOrEqual(20);
-        });
+
+        // it("should end the game when the score reaches 20", function (){
+        //     var spyEvent = spyOnEvent("#fanfare", "play");
+        //     gameScore = 20;
+        //     expect(spyEvent).toHaveBeenTriggered();
+        // });
         
         it("should cause a timeout to be called synchronously", function() {
             setTimeout(function() {
@@ -52,37 +55,3 @@ describe("My sequence comparison function", function() {
 });
    
 
-//Buttons
-//Code for detecting click events is from 
-// https://stackoverflow.com/questions/23486444/error-on-jasmine-expected-event-click-to-have-been-triggered-on-div-id/23492830    
-
-describe("Start button", function() { 
-    it("should be clickable", function() {
-        setFixtures('<button id="start"></button>');
-        $('#start').on('click', function () { console.log("CLICK EVENT"); });
-        var spyEvent = spyOnEvent('#start', 'click');
-        $('#start').trigger('click');
-        expect(spyEvent).toHaveBeenTriggered();
-    });
-});
-
-describe("Reset button", function() {       
-    it("should reload the page", function() {
-        setFixtures('<btn id="reset"></btn>');
-        $('#reset').on('click', function () { console.log("CLICK EVENT"); });
-        var spyEvent = spyOnEvent('#reset', 'click');
-        $('#reset').trigger('click');
-        expect(spyEvent).toHaveBeenTriggered();
-        expect(gameSequence).toEqual([]);
-    }); 
-});
-
-describe("Coloured buttons", function() { 
-    it("should be clickable", function() {
-        setFixtures('<button class="colour"></button>');
-        $('.colour').on('click', function () { console.log("CLICK EVENT"); });
-        var spyEvent = spyOnEvent('.colour', 'click');
-        $('.colour').trigger('click');
-        expect(spyEvent).toHaveBeenTriggered();
-    });
-});

@@ -57,3 +57,4 @@ and the id of one more random colour is pushed to gameSequence.</li>
 <li> <a href="http://www.jslint.com/">JS Lint</a></li>
 <li> Jasmine</li>
 <li> Playing the game multiple times</li>
+<li> Checking it on a Samsung Galaxy S7 and an iPad Air to ensure that it displays correctly at small and medium screen sizes</li>
