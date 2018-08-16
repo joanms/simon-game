@@ -34,13 +34,6 @@ describe("My sequence comparison function", function() {
             expect(sequenceCompare).toBeDefined();
             }); 
         
-
-        // it("should end the game when the score reaches 20", function (){
-        //     var spyEvent = spyOnEvent("#fanfare", "play");
-        //     gameScore = 20;
-        //     expect(spyEvent).toHaveBeenTriggered();
-        // });
-        
         it("should cause a timeout to be called synchronously", function() {
             setTimeout(function() {
               timerCallback();
