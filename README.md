@@ -60,7 +60,7 @@ and the id of one more random colour is pushed to gameSequence.
 
 ## Technologies Used
 
-- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG.
+- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
 - **[Lucidchart](https://www.lucidchart.com/)** was used to create a flowchart of the game logic.
 - **[Bootstrap](https://getbootstrap.com/)** is used to simplify layout and responsiveness, and for the user interface buttons.
 - **[JQuery](https://jquery.com)** is used to simplify DOM manipulation and make the JavaScript more concise.
@@ -75,13 +75,15 @@ and the id of one more random colour is pushed to gameSequence.
 The Jasmine test files are at simon-game/jasmine.html, simon-game/assets/js/jasmine-jquery.js and simon-game/assets/js/scriptSpec.js. 
 To run the tests, view jasmine.html in a browser.
 - I tested the user interface by playing the game multiple times.
+    - I clicked the Start and Reset buttons to ensure that they functioned correctly.
     - I checked the highlighted buttons against gameSequence in the browser console to ensure that the correct buttons were highlighted.
-    - I played a full game multiple times to ensure that the fanfare played and the "You win!" alert displayed correctly.
+    - I checked the score as I played to ensure that it increased by one point for each correct round input.
+    - I played a full game multiple times to ensure that the fanfare played and the "You win!" alert displayed correctly when the score reached 20.
     - I made deliberate errors in strict mode to ensure that the error tone played, the correct alert popped up and the page reloaded.
     - I made deliberate errors in normal mode to ensure that the error tone played, the correct alert popped up and the sequence was highlighted again. 
 - I checked the layout on a desktop PC an iPad Air and a Samsung Galaxy S7 to ensure that it displays correctly at all screen sizes.
     - On a PC monitor, the instructions are on the left, the gameplay area is in the middle and the credits for the sounds are on the right.
-    - On tablets and mobile phones, the gameplay area is at the top, the instructions are below it and the credits for the sounds are on the bottom.
+    - On tablets and mobile phones, the gameplay area is at the top, the instructions are below it and the credits for the sounds are at the bottom.
 
 ## Deployment
 
