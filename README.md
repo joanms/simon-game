@@ -60,6 +60,8 @@ and the id of one more random colour is pushed to gameSequence.
 
 ## Technologies Used
 
+- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG.
+- **[Lucidchart](https://www.lucidchart.com/)** was used to create a flowchart of the game logic.
 - **[Bootstrap](https://getbootstrap.com/)** is used to simplify layout and responsiveness, and for the user interface buttons.
 - **[JQuery](https://jquery.com)** is used to simplify DOM manipulation and make the JavaScript more concise.
 - **[Jasmine](https://jasmine.github.io/)** is used to test the JavaScript code.
