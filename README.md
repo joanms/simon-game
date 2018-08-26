@@ -81,7 +81,8 @@ This is a front-end only interactive website, using HTML5, CSS3 and JavaScript. 
 - I tested the HTML with [W3C Markup Validator](https://validator.w3.org/).
 - I tested the JavaScript with [JS Hint](http://jshint.com/), [JS Lint](http://www.jslint.com/) and [Jasmine](https://jasmine.github.io/). 
 The Jasmine test files are at simon-game/jasmine.html, simon-game/assets/js/jasmine-jquery.js and simon-game/assets/js/scriptSpec.js. 
-To run the tests, view jasmine.html in a browser.
+To run the tests, view jasmine.html in a browser. Since most of the functionality depends on click events, there are not many features that 
+can be tested with Jasmine.
 - I tested the user interface by playing the game multiple times.
     - I clicked the Start and Reset buttons to ensure that they functioned correctly.
     - I checked the highlighted buttons against gameSequence in the browser console to ensure that the correct buttons were highlighted.
