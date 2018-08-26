@@ -1,15 +1,31 @@
 # Simon Game
-This is an internet application based on the Simon game which launched in 1978. While I saw no reason to copy the design of the original Simon game 
+This game is based on the Simon game which launched in 1978. While I saw no reason to copy the design of the original Simon game 
 hardware, the basic principles of the game are the same: the user must click a gradually increasing sequence of colours until the score reaches 20. 
 There is an optional strict mode which forces the user to start over from the beginning after making a mistake. Otherwise, they may attempt the sequence again.
 
 ## UX
 
+### Playing the Game
+
+[Click here to see a flowchart outlining the game logic](https://www.lucidchart.com/invitations/accept/86cda98e-cc15-4030-b20d-b76d33c29d08).
+
+1. The user clicks the Strict Mode checkbox (optional) and then the Start button. 
+2. A random coloured button is highlighted and its sound plays.
+3. The user clicks the same coloured button. 
+4. If the user clicks the correct button, a bell rings, the user earns a point, and the same button plus one more random coloured button is highlighted. 
+Each button's unique sound plays as it is highlighted.
+6. If the user continues to click the correct sequence of buttons, the sequence and the user's score increase by one with each round. 
+The user can start over at any time by clicking the “Reset” button and then the "Start" button.
+7. If the user clicks the wrong button or sequence of buttons, an error sound plays and one of two alerts appears:
+    - *Normal mode:* "Incorrect. Please attempt the sequence again." When the user clicks OK, the button or sequence of buttons is highlighted again.
+    - *Strict mode:* "Incorrect. Please click Start to begin a new game." When the user clicks OK, the page reloads.
+8. When the user’s score reaches 20, a fanfare plays and an alert saying "You win!" appears. 
+
 ### User Stories
 - **I want a game with clear, intuitive rules.**
 
     Clear, concise instructions are prominently displayed on the page and user interface elements are clearly labelled.
-
+    
 - **I want clear feedback when I click buttons.**
 
     When the Start button is clicked, it is disabled to prevent it from being clicked again while a game is in progress. 
@@ -27,27 +43,16 @@ There is an optional strict mode which forces the user to start over from the be
 - **I want to know when the game is over.**
 
     If the user achieves a score of 20, a fanfare plays and an alert saying "You win!" pops up.
+    
+- **I don't want irritating sounds.**
+    
+    I carefully chose sounds that would be pleasant to listen to over and over. If a sound started to irritate me after I'd been 
+    testing the game for a while, I replaced it.
 
 - **I want to be able to cancel a game and start over if I want to.**
 
     There is a clearly labelled Reset button.
 
-
-### Playing the Game
-
-[Click here to see a flowchart outlining the game logic](https://www.lucidchart.com/invitations/accept/86cda98e-cc15-4030-b20d-b76d33c29d08).
-
-1. The user clicks the Strict Mode checkbox (optional) and then the Start button. This pushes the id of a random colour to an array named gameSequence.
-2. The highlightColours function highlights the colour and plays its sound.
-3. The user clicks the same coloured button. This pushes its id to an array named userSequence. 
-4. When gameSequence and userSequence are the same length, a function to compare their contents is called. If they match, a bell rings, the user earns a point, userSequence is emptied 
-and the id of one more random colour is pushed to gameSequence.
-5. The highlightColours function iterates through gameSequence, highlighting each colour and playing its sound.
-6. In each round, the user must click a sequence of colours that matches gameSequence.
-7. If gameSequence and userSequence are the same length but their contents don't match, an error sound plays, and one of two popups appears:
-    - *Normal mode:* "Incorrect. Please attempt the sequence again." When the user clicks OK, highlightColours is called again.
-    - *Strict mode:* "Incorrect. Please click Start to begin a new game." When the user clicks OK, the page reloads.
-8. The game ends when the user’s score reaches 20. The user can start over at any time by clicking the “Reset” button and then the "Start" button.
 
 ## Features
 
@@ -60,6 +65,8 @@ and the id of one more random colour is pushed to gameSequence.
 
 
 ## Technologies Used
+
+This is a front-end only interactive website, using HTML5, CSS3 and JavaScript. In addition, I used the following:
 
 - **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
 - **[Lucidchart](https://www.lucidchart.com/)** was used to create a flowchart of the game logic.
@@ -86,9 +93,15 @@ To run the tests, view jasmine.html in a browser.
     - On a PC monitor, the instructions are on the left, the gameplay area is in the middle and the credits for the sounds are on the right.
     - On tablets and mobile phones, the gameplay area is at the top, the instructions are below it and the credits for the sounds are at the bottom.
 
+### Bug
+
+On mobile devices, the colour highlighting and sounds are out of sync, and when the user taps a coloured button, it isn't highlighted, but the sound plays. 
+Since the game otherwise works on mobile devices, I think that this bug is due to an inherent limitation of mobile devices in handling JavaScript.
+
 ## Deployment
 
-I deployed the project to Github. No issues to report.
+I deployed the project to GitHub. I navigated to the repository in GitHub, clicked on Settings, scrolled down to GitHub Pages, selected the master branch as the source 
+and clicked Save. There are no differences between the deployed version and the development version.
 
 ## Credits
 ### Audio
