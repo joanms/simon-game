@@ -8,7 +8,7 @@ var gameScore = 0;
 $("#start").click(function() { 
     var rand = colourArray[Math.floor(Math.random() * 4)];
     gameSequence.push(rand);
-    $("#start").attr("disabled", "disabled"); //The Start button is disabled once the game has started. The user must click Reset and then Start to start a new game.
+    $("#start").attr("disabled", "disabled"); //The Start button is disabled after clicking to prevent errors caused by the user clicking it more than once.
     console.log(gameSequence);
     highlightColours();
 });
@@ -23,7 +23,7 @@ $(".colour").mousedown(function() {
   console.log(userSequence);
   //When the user's clicked sequence is the same length as the randomly generated one, their contents are compared.
   if (userSequence.length == gameSequence.length) { 
-    setTimeout(function(){
+    setTimeout(function(){ //This timeout is to ensure that there is a slight delay between the user's input and the game's feedback, so the user is not confused by the game moving too fast.
       sequenceCompare();
     }, 500);
   }
