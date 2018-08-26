@@ -100,8 +100,14 @@ Since the game otherwise works on mobile devices, I think that this bug is due t
 
 ## Deployment
 
-I deployed the project to GitHub. I navigated to the repository in GitHub, clicked on Settings, scrolled down to GitHub Pages, selected the master branch as the source 
-and clicked Save. There are no differences between the deployed version and the development version.
+I deployed the project to GitHub as folows: 
+
+1. I navigated to the repository in GitHub.
+2. I clicked on Settings
+3. I scrolled down to GitHub Pages and selected the master branch as the source 
+4. I clicked Save. 
+5. 
+The procedure worked without any errors, and there are no differences between the deployed version and the development version.
 
 ## Credits
 ### Audio
