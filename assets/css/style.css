@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     font-family: "Audiowide", cursive;
     font-size: 30px;
 }
@@ -24,7 +24,7 @@ h2 {
     font-family: "Exo 2", sans-serif;
     font-size: 20px;
     text-align: left;
-    padding: 20px;
+    padding: 50px;
 }
 
 /* Buttons */
