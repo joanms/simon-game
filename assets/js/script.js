@@ -40,16 +40,15 @@ $("#reset").click(function() {
 
 
 //The colour(s) in gameSequence should be highlighted one by one in the correct order and the corresponding sound(s) should play.
-//The syntax for this function is from https://stackoverflow.com/a/36707123/9179340
 function highlightColours() {
   gameSequence.forEach(function(element, index){ //forEach ensures that the array elements are highlighted in the correct order.
-    setTimeout(function(){
+    setTimeout(function(){ //This timeout from https://stackoverflow.com/a/36707123/9179340 ensures that the array elements are highlighted one after another and not simultaneously.
       $(element + "-sound")[0].load(); //Loading the sound before playing it makes it possible to play the same sound more than once in a row.
       $(element + "-sound")[0].play();
       $(element).addClass("active");
       setTimeout(function(){$(element).removeClass("active");}, 500);
     },
-    1000 * index); //This ensures that the array elements are highlighted one after another and not simultaneously.
+    700 * index); //Index 0 is highlighted immediately, index 1 after 700ms, index 2 700ms after that, and so on.
   });
 }
 
@@ -68,7 +67,7 @@ function sequenceCompare() {
       } 
       else { //The user has input the correct sequence, but not achieved the maximum score of 20.
         $("#bell")[0].play();
-        setTimeout(function() {
+        setTimeout(function() { // This timeout ensures that the next round doesn't start too soon after the previous one
         var rand = colourArray[Math.floor(Math.random() * 4)];
         gameSequence.push(rand); //Add one more random number to the sequence.
         console.log(gameSequence);
