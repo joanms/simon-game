@@ -38,7 +38,7 @@ The user can start over at any time by clicking the “Reset” button and then 
 
     If the user clicks the correct sequence, the score increases and a bell rings before the next round starts.
     If they clicked an incorrect sequence, an error sound plays and an alert pops up telling them that they made a mistake, 
-    and what to do next -- start over in strict mode or try the same sequence again in normal mode. 
+    and what to do next: start over in strict mode or try the same sequence again in normal mode. 
 
 - **I want to know when the game is over.**
 
@@ -107,7 +107,7 @@ I deployed the project to GitHub as folows:
 2. I clicked on Settings
 3. I scrolled down to GitHub Pages and selected the master branch as the source 
 4. I clicked Save. 
-5. 
+
 The procedure worked without any errors, and there are no differences between the deployed version and the development version.
 
 ## Credits
