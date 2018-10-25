@@ -38,7 +38,8 @@ The user can start over at any time by clicking the “Reset” button and then 
 
     If the user clicks the correct sequence, the score increases and a bell rings before the next round starts.
     If they clicked an incorrect sequence, an error sound plays and an alert pops up telling them that they made a mistake, 
-    and what to do next: start over in strict mode or try the same sequence again in normal mode. 
+    and what to do next: start over in strict mode or try the same sequence again in normal mode. Because excessive popups 
+    are annoying, I only included ones that give necessary information to the user.
 
 - **I want to know when the game is over.**
 
