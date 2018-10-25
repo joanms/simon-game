@@ -16,8 +16,8 @@ $("#start").click(function() {
 
 //When the user clicks a coloured button, it's highlighted and its sound plays.
 $(".colour").mousedown(function() {
-  $("#"+(this.id)+"-sound")[0].load(); //Loading the sound before playing it makes it possible to play the same sound more than once in a row.
-  $("#"+(this.id)+"-sound")[0].play();
+  $("#"+(this.id)+"-sound")[0].load(); //Loading the sound before playing it makes it possible to play the same sound more than once in a row.  
+  $("#"+(this.id)+"-sound")[0].play(); //The code for loading and playing sounds is from this video by YouTube user Happy Coder https://www.youtube.com/watch?v=4pfvy_A5ceE
   $(this).addClass("active");
   userSequence.push("#" + this.id); //The user's selection is added to userSequence.
   console.log(userSequence);
@@ -44,7 +44,7 @@ function highlightColours() {
   gameSequence.forEach(function(element, index){ //forEach ensures that the array elements are highlighted in the correct order.
     setTimeout(function(){ //This timeout from https://stackoverflow.com/a/36707123/9179340 ensures that the array elements are highlighted one after another and not simultaneously.
       $(element + "-sound")[0].load(); //Loading the sound before playing it makes it possible to play the same sound more than once in a row.
-      $(element + "-sound")[0].play();
+      $(element + "-sound")[0].play(); //The code for loading and playing sounds is from this video by YouTube user Happy Coder https://www.youtube.com/watch?v=4pfvy_A5ceE
       $(element).addClass("active");
       setTimeout(function(){$(element).removeClass("active");}, 500);
     },
