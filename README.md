@@ -97,7 +97,8 @@ can be tested with Jasmine.
 ### Bug
 
 On mobile devices, the colour highlighting and sounds are out of sync, and when the user taps a coloured button, it isn't highlighted, but the sound plays. 
-Since the game otherwise works on mobile devices, I think that this bug is due to an inherent limitation of mobile devices in handling JavaScript.
+The game otherwise works on mobile devices. After discussing this with my mentor, Chris Zielinski, I think that this bug is due to an inherent limitation 
+of mobile devices in handling JavaScript.
 
 ## Deployment
 
@@ -128,3 +129,5 @@ The original Simon game was invented by Ralph H. Baer and Howard J. Morrison, wi
 It was manufactured and distributed by Milton Bradley and later by Hasbro after it took over Milton Bradley.
 
 I used [this video](https://www.youtube.com/watch?v=4pfvy_A5ceE) by YouTube user Happy Coder to help me work out the JavaScript logic.
+
+My mentors, Micheal Newton and Chris Zielinski, provided valuable feedback and advice on the project.
