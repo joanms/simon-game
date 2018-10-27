@@ -72,9 +72,9 @@ The user can start over at any time by clicking the “Reset” button and then 
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
 - **[Bootstrap](https://getbootstrap.com/)** was used to simplify the layout and responsiveness.
 - **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
-- **[JQuery](https://jquery.com)** is used to simplify DOM manipulation and make the JavaScript more concise.
-- **[Jasmine](https://jasmine.github.io/)** is used to test the JavaScript code.
-- **[Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)** is used to enable Jasmine to test the jQuery code.
+- **[JQuery](https://jquery.com)** was used to simplify DOM manipulation and make the JavaScript more concise.
+- **[Jasmine](https://jasmine.github.io/)** was used to test the JavaScript code.
+- **[Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)** was used to enable Jasmine to test the jQuery code.
 
 
 ## Testing
