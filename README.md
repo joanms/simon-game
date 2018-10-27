@@ -67,11 +67,11 @@ The user can start over at any time by clicking the “Reset” button and then 
 
 ## Technologies Used
 
-This is a front-end only interactive website, using HTML5, CSS3 and JavaScript. In addition, I used the following:
-
-- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
 - **[Lucidchart](https://www.lucidchart.com/)** was used to create a flowchart of the game logic.
-- **[Bootstrap](https://getbootstrap.com/)** is used to simplify layout and responsiveness, and for the user interface buttons.
+- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to write the content of the site.
+- **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
+- **[Bootstrap](https://getbootstrap.com/)** was used to simplify the layout and responsiveness.
+- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
 - **[JQuery](https://jquery.com)** is used to simplify DOM manipulation and make the JavaScript more concise.
 - **[Jasmine](https://jasmine.github.io/)** is used to test the JavaScript code.
 - **[Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)** is used to enable Jasmine to test the jQuery code.
