@@ -51,8 +51,8 @@ h2 {
 
 .colour {
     opacity: 1;
-    height: 175px;
-    width: 175px;
+    height: 150px;
+    width: 150px;
     display: inline-block;
     border-radius: 20%;
     margin-right: 20px;
@@ -97,3 +97,4 @@ input[type=checkbox] {
  -o-transform: scale(2); 
  padding: 10px;
 }
+
