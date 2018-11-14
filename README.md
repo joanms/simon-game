@@ -125,10 +125,13 @@ License: [Attribution](https://creativecommons.org/licenses/by/3.0/legalcode).
 - [Tada Fanfare F](https://freesound.org/people/plasterbrain/sounds/397354/) by [plasterbrain](https://freesound.org/people/plasterbrain/). 
 License: [Creative Commons](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
+### Image
+The favicon is a free stock image from [Pixabay](https://pixabay.com/).
+
 ### Acknowledgements
 The original Simon game was invented by Ralph H. Baer and Howard J. Morrison, with software programming by Lenny Cope. 
 It was manufactured and distributed by Milton Bradley and later by Hasbro after it took over Milton Bradley.
 
 I used [this video](https://www.youtube.com/watch?v=4pfvy_A5ceE) by YouTube user Happy Coder to help me work out the JavaScript logic.
 
-My mentors, Micheal Newton and Chris Zielinski, provided valuable feedback and advice on the project.
+My mentors, Michael Newton and Chris Zielinski, provided valuable feedback and advice on the project.
