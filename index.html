@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <link rel="shortcut icon" type="image/png" href="assets/images/s_favicon.ico">
-
-    <title>Simon Game</title>
+    <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <link rel="shortcut icon" type="image/png" href="assets/images/s_favicon.ico">
     
-    <audio id="blue-sound">
-        <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3">
-	    <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg">
-    </audio>
-    <audio id="red-sound">
-        <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3">
-	    <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg">
-    </audio>  
-    <audio id="yellow-sound">
-        <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3">
-	    <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg">
-    </audio>  
-    <audio id="orange-sound">
-        <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3">
-	    <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg">
-    </audio>
-    <audio id="error-sound">
-        <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3">
-	    <source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg">
-    </audio>
-        <audio id="fanfare">
-        <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3">
-	    <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg">
-    </audio>
-    <audio id="bell">
-        <source src="assets/audio/mp3/411749__natty23__bell-ding.mp3">
-	    <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg">
-    </audio>
-
-
-<div class="game-container">
+        <title>Simon Game</title>
+        
+        <audio id="blue-sound">
+            <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3">
+    	    <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg">
+        </audio>
+        <audio id="red-sound">
+            <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3">
+    	    <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg">
+        </audio>  
+        <audio id="yellow-sound">
+            <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3">
+    	    <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg">
+        </audio>  
+        <audio id="orange-sound">
+            <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3">
+    	    <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg">
+        </audio>
+        <audio id="error-sound">
+            <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3">
+    	    <source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg">
+        </audio>
+            <audio id="fanfare">
+            <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3">
+    	    <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg">
+        </audio>
+        <audio id="bell">
+            <source src="assets/audio/mp3/411749__natty23__bell-ding.mp3">
+    	    <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg">
+        </audio>
     
-    <h1>Simon</h1>
-        <div class="row">
-            <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 information">
-                <h2>Instructions</h2>
-                    <ol>
-                        <li>If you want the game to force you to start over if you make a mistake, click the 
-                        <strong>Strict Mode</strong> checkbox.</li>
-                        <li>Click <strong>Start</strong>. A coloured button will be highlighted and its sound will play.</li>
-                        <li>Click the button that was highlighted. A bell will ring, you will earn one point, and the 
-                        same button plus one more will be highlighted.</li>
-                        <li>Click the buttons that were highlighted, in the order in which they were highlighted.</li> 
-                        <li>The sequence of highlighted buttons will increase by one with each round. If you click the 
-                        wrong sequence, an error sound will play and you will be prompted to try again (normal mode) or 
-                        start a new game (strict mode).</li> 
-                        <li>Continue clicking the highlighted sequences of colours until you reach the maximum score of 
-                        20. If you want to cancel the current game and start a new one, click <strong>Reset</strong> and 
-                        then <strong>Start</strong>.</li>
-                    </ol>
-            </div>
-            <div class="col-xs-12 order-xs-1 col-lg-4 order-lg-2">
-                <div> 
-                    <input type="checkbox" name="strict-mode" id="strict-mode" />
-                        <span class="checkboxtext">Strict Mode</span>            
-                </div>    
-                <div> 
-                    <button type="button" id="start" class="btn btn-dark">Start</button>
-                    <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span></button>
-                    <button type="button" id="reset" class="btn btn-dark">Reset</button>
-                </div>
-                <div class="row justify-content-center">
-                    <div id="blue" class="colour"></div>
-                    <div id="red" class="colour"></div>    
-                </div>
-                <div class="row justify-content-center">
-                    <div id="yellow" class="colour"></div>    
-                    <div id="orange" class="colour"></div>
-                </div>
-            </div>
-            <div class="col-xs-12 order-xs-3 col-lg-3 order-lg-3 information">
-                <h2>Credits</h2>
-                    This game uses these sounds from freesound.org:
-                    <ul>
-                        <li><a href="https://freesound.org/people/UbikPhonik/sounds/177947/" target="_blank">Ab1.aif</a>, 
-                        <a href="https://freesound.org/people/UbikPhonik/sounds/177948/" target="_blank">C1.aif</a>, 
-                        <a href="https://freesound.org/people/UbikPhonik/sounds/177954/" target="_blank">Eb1.aif</a> and  
-                        <a href="https://freesound.org/people/UbikPhonik/sounds/177943/" target="_blank">F1.aif</a> 
-                        by <a href="https://freesound.org/people/UbikPhonik/" target="_blank">UbikPhonik</a></li>
-                        <li><a href="https://freesound.org/people/Natty23/sounds/411749/" target="_blank">Bell Ding</a> 
-                        by <a href="https://freesound.org/people/Natty23/" target="_blank">Natty23</a></li> 
-                        <li><a href="https://freesound.org/people/distillerystudio/sounds/327735/" target="_blank">Error_04.wav</a> 
-                        by <a href="https://freesound.org/people/distillerystudio/" target="_blank">distillerystudio</a></li> 
-                        <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/" target="_blank">Tada Fanfare F</a> 
-                        by <a href="https://freesound.org/people/plasterbrain/" target="_blank">plasterbrain</a></li> 
-                    </ul>
+    </head>
 
-            </div>
+    <body>
+    
+        <div class="game-container">
+    
+            <h1>Simon</h1>
+                <div class="row">
+
+                    <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 information">
+                        <h2>Instructions</h2>
+                            <ol>
+                                <li>If you want the game to force you to start over if you make a mistake, click the 
+                                <strong>Strict Mode</strong> checkbox.</li>
+                                <li>Click <strong>Start</strong>. A coloured button will be highlighted and its sound will play.</li>
+                                <li>Click the button that was highlighted. A bell will ring, you will earn one point, and the 
+                                same button plus one more will be highlighted.</li>
+                                <li>Click the buttons that were highlighted, in the order in which they were highlighted.</li> 
+                                <li>The sequence of highlighted buttons will increase by one with each round. If you click the 
+                                wrong sequence, an error sound will play and you will be prompted to try again (normal mode) or 
+                                start a new game (strict mode).</li> 
+                                <li>Continue clicking the highlighted sequences of colours until you reach the maximum score of 
+                                20. If you want to cancel the current game and start a new one, click <strong>Reset</strong> and 
+                                then <strong>Start</strong>.</li>
+                            </ol>
+                    </div>
+                    
+                    <div class="col-xs-12 order-xs-1 col-lg-4 order-lg-2">
+                        <div> 
+                            <input type="checkbox" name="strict-mode" id="strict-mode" />
+                            <span class="checkboxtext">Strict Mode</span>            
+                        </div>    
+                        <div> 
+                            <button type="button" id="start" class="btn btn-dark">Start</button>
+                            <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span></button>
+                            <button type="button" id="reset" class="btn btn-dark">Reset</button>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="blue" class="colour"></div>
+                            <div id="red" class="colour"></div>    
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="yellow" class="colour"></div>    
+                            <div id="orange" class="colour"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 order-xs-3 col-lg-3 order-lg-3 information">
+                        <h2>Credits</h2>
+                            This game uses these sounds from freesound.org:
+                            <ul>
+                                <li><a href="https://freesound.org/people/UbikPhonik/sounds/177947/" target="_blank">Ab1.aif</a>, 
+                                <a href="https://freesound.org/people/UbikPhonik/sounds/177948/" target="_blank">C1.aif</a>, 
+                                <a href="https://freesound.org/people/UbikPhonik/sounds/177954/" target="_blank">Eb1.aif</a> and  
+                                <a href="https://freesound.org/people/UbikPhonik/sounds/177943/" target="_blank">F1.aif</a> 
+                                by <a href="https://freesound.org/people/UbikPhonik/" target="_blank">UbikPhonik</a></li>
+                                <li><a href="https://freesound.org/people/Natty23/sounds/411749/" target="_blank">Bell Ding</a> 
+                                by <a href="https://freesound.org/people/Natty23/" target="_blank">Natty23</a></li> 
+                                <li><a href="https://freesound.org/people/distillerystudio/sounds/327735/" target="_blank">Error_04.wav</a> 
+                                by <a href="https://freesound.org/people/distillerystudio/" target="_blank">distillerystudio</a></li> 
+                                <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/" target="_blank">Tada Fanfare F</a> 
+                                by <a href="https://freesound.org/people/plasterbrain/" target="_blank">plasterbrain</a></li> 
+                            </ul>
+                    </div>
+                    
+                </div>
         </div>
-</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
 
-</body>
+    </body>
+
 </html>
