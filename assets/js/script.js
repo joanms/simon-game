@@ -21,6 +21,7 @@ $(".colour").mousedown(function() {
   $(this).addClass("active");
   userSequence.push("#" + this.id); //The user's selection is added to userSequence.
   console.log(userSequence);
+
   //When the user's clicked sequence is the same length as the randomly generated one, their contents are compared.
   if (userSequence.length == gameSequence.length) { 
     setTimeout(function(){ //This timeout is to ensure that there is a slight delay between the user's input and the game's feedback, so the user is not confused by the game moving too fast.
@@ -55,17 +56,23 @@ function highlightColours() {
 
 //Compare the user's sequence with the randomly generated sequence
 function sequenceCompare() {
+
 //The syntax for the following line is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+
   if (userSequence.every(function(value, index) { return value === gameSequence[index]})) {
     console.log("Match"); //Check if the above worked correctly.
     gameScore++; //A point is added to the user's score.
     $("#score").text(gameScore); //Display the user's score.
     userSequence = []; //userSequence is emptied after each round because the user must input the whole sequence in each round.
-      if (gameScore == 20) { //The user has achieved the maximum score.
+
+//The game is over when the user has achieved the maximum score.
+      if (gameScore == 20) { 
         $("#fanfare")[0].play();
         alert("You win!"); 
       } 
-      else { //The user has input the correct sequence, but not achieved the maximum score of 20.
+
+//The user has input the correct sequence, but not achieved the maximum score of 20.
+      else { 
         $("#bell")[0].play();
         setTimeout(function() { // This timeout ensures that the next round doesn't start too soon after the previous one
         var rand = colourArray[Math.floor(Math.random() * 4)];
@@ -75,15 +82,19 @@ function sequenceCompare() {
         }, 500);
     } 
   } 
+
+//If the game is in strict mode, the user must start over after making a mistake.
 //Code for the following line is from https://medium.com/js-dojo/check-if-a-checkbox-is-checked-with-jquery-2843f97d4954
   else if ($("input[type=checkbox]").prop("checked")) {
     $("#error-sound")[0].play();
-    alert("Incorrect. Please click Start to begin a new game."); //If the game is in strict mode, the user must start over after making a mistake.
+    alert("Incorrect. Please click Start to begin a new game."); 
     location.reload();
   } 
+
+//If the game is not in strict mode, the user may try again after making a mistake.
   else {
     $("#error-sound")[0].play();
-    alert("Incorrect. Please attempt the sequence again."); //If the game is not in strict mode, the user may try again after making a mistake.
+    alert("Incorrect. Please attempt the sequence again."); 
     userSequence = [];
     highlightColours();
   }
