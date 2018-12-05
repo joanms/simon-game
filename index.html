@@ -11,38 +11,55 @@
 
     <body>
         
+        <!--The sounds used in the game-->
+        
+        <!--This sound plays when the blue button is highlighted-->
         <audio id="blue-sound">
             <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3">
             <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg">
         </audio>
+        
+        <!--This sound plays when the red button is highlighted-->
         <audio id="red-sound">
             <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3">
             <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg">
-        </audio>  
+        </audio>
+        
+        <!--This sound plays when the yellow button is highlighted-->
         <audio id="yellow-sound">
             <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3">
             <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg">
-        </audio>  
+        </audio> 
+        
+        <!--This sound plays when the orange button is highlighted-->
         <audio id="orange-sound">
             <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3">
             <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg">
         </audio>
-        <audio id="error-sound">
+        
+        <!--This sound plays when the user makes a mistake-->
+        <audio id="error-sound"> 
             <source src="assets/audio/mp3/327735__distillerystudio__error-04.mp3">
             <source src="assets/audio/ogg/327735__distillerystudio__error-04.ogg">
         </audio>
-            <audio id="fanfare">
-            <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3">
-            <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg">
-        </audio>
-        <audio id="bell">
+        
+        <!--This sound plays when the user clicks the correct sequence-->
+        <audio id="bell"> 
             <source src="assets/audio/mp3/411749__natty23__bell-ding.mp3">
             <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg">
         </audio>
+
+        <!--This sound plays when the user wins the game-->
+        <audio id="fanfare"> 
+            <source src="assets/audio/mp3/397354__plasterbrain__tada-fanfare-f.mp3">
+            <source src="assets/audio/ogg/397354__plasterbrain__tada-fanfare-f.ogg">
+        </audio>
+        
         
         <div class="game-container">
         
                 <h1>Simon</h1>
+                
                     <div class="row">
     
                         <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 body-text information">
@@ -61,27 +78,37 @@
                                     20. If you want to cancel the current game and start a new one, click <strong>Reset</strong> and 
                                     then <strong>Start</strong>.</li>
                                 </ol>
-                        </div>
+                        </div>  <!--End of the instructions-->
                         
                         <div class="col-xs-12 order-xs-1 col-lg-4 order-lg-2">
+                            
+                            <!--The checkbox to select strict mode-->
                             <div> 
                                 <input type="checkbox" name="strict-mode" id="strict-mode" />
                                 <span class="body-text settings">Strict Mode</span>            
-                            </div>    
+                            </div>
+                            
+                            <!--Start button, score counter and reset button-->
                             <div> 
                                 <button type="button" id="start" class="btn btn-dark body-text settings">Start</button>
-                                <button type="button" class="btn btn-light body-text settings">Score:<span class="badge badge-light body-text settings" id="score">0</span></button>
+                                <button type="button" class="btn btn-light body-text settings">Score:
+                                <span class="badge badge-light body-text settings" id="score">0</span></button>
                                 <button type="button" id="reset" class="btn btn-dark body-text settings">Reset</button>
                             </div>
-                            <div class="row justify-content-center">
-                                <div id="blue" class="colour"></div>
-                                <div id="red" class="colour"></div>    
-                            </div>
-                            <div class="row justify-content-center">
-                                <div id="yellow" class="colour"></div>    
-                                <div id="orange" class="colour"></div>
-                            </div>
-                        </div>
+                            
+                            <div> <!--Coloured buttons that are highlighted when a sequence plays or the user clicks them-->
+                                <div class="row justify-content-center">
+                                    <div id="blue" class="colour"></div>
+                                    <div id="red" class="colour"></div>    
+                                </div>
+                                
+                                <div class="row justify-content-center">
+                                    <div id="yellow" class="colour"></div>    
+                                    <div id="orange" class="colour"></div>
+                                </div>
+                            </div> <!--End of the coloured buttons-->
+                            
+                        </div> <!--End of the game controls and coloured buttons-->
                         
                         <div class="col-xs-12 order-xs-3 col-lg-3 order-lg-3 body-text information">
                             <h2>Credits</h2>
@@ -99,10 +126,10 @@
                                     <li><a href="https://freesound.org/people/plasterbrain/sounds/397354/" target="_blank">Tada Fanfare F</a> 
                                     by <a href="https://freesound.org/people/plasterbrain/" target="_blank">plasterbrain</a></li> 
                                 </ul>
-                        </div>
+                        </div> <!--End of the credits-->
                         
-                    </div>
-            </div>
+                    </div> <!--End of the row with the instructions, gameplay area and credits-->
+            </div> <!--End of the game container-->
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
