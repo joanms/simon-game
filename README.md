@@ -64,6 +64,10 @@ The user can start over at any time by clicking the “Reset” button and then 
 - **Reset button** to cancel the game. When clicked, it reloads the page, emptying the game sequence and reverting the score to zero.
 - **Blue, red, yellow** and **orange buttons.** The original Simon game has a green button, but I replaced it with orange to make it easier for colourblind people to play.
 
+### Features Not Implemented
+
+I could add the option to mute sounds for people who find them annoying. However, since modern browsers allow users to mute individual tabs, this is not an essential feature.
+
 
 ## Technologies Used
 
