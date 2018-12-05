@@ -61,7 +61,7 @@ The user can start over at any time by clicking the “Reset” button and then 
 - **Checkbox** to select Strict Mode if desired.
 - **Start button** to begin the game.
 - **Score counter** to keep track of the user's score.
-- **Reset button** to cancel the game. When clicked, it reloads the page, emptying the game sequence and reverting the score to zero.
+- **Reset button** to cancel the game. When clicked, it reloads the page, emptying the user and game sequences and reverting the score to zero.
 - **Blue, red, yellow** and **orange buttons.** The original Simon game has a green button, but I replaced it with orange to make it easier for colourblind people to play.
 
 ### Features Not Implemented
