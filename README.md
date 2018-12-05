@@ -1,4 +1,4 @@
-# Simon Game
+# [Simon Game](https://joanms.github.io/simon-game/)
 This game is based on the Simon game which launched in 1978. While I saw no reason to copy the design of the original Simon game 
 hardware, the basic principles of the game are the same: the user must click a gradually increasing sequence of colours until the score reaches 20. 
 There is an optional strict mode which forces the user to start over from the beginning after making a mistake. Otherwise, they may attempt the sequence again.
