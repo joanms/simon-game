@@ -16,13 +16,16 @@ h2 {
     font-size: 30px;
 }
 
+.body-text {
+    font-family: "Exo 2", sans-serif;
+    font-size: 18px;
+}
+
 .game-container {
     text-align: center;
 }
 
 .information {
-    font-family: "Exo 2", sans-serif;
-    font-size: 20px;
     text-align: left;
     margin-left: 20px;
 }
@@ -31,22 +34,8 @@ h2 {
 
 /* Buttons */
 
-.btn {
-    font-family: "Exo 2", sans-serif;
-    font-size: 20px;
+.settings {
     margin: 10px;
-}
-
-.checkboxtext {
-    font-family: "Exo 2", sans-serif;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-#score {
-    font-family: "Exo 2", sans-serif;
-    font-size: 20px;
-    margin-left: 10px;
 }
 
 .colour {

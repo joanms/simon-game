@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
+<!--This file omits head and body tags as they are not needed and cause error messages in the W3C Markup Validator-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <link rel="shortcut icon" type="image/png" href="assets/images/s_favicon.ico">
     
     <title>Simon Game</title>
         
@@ -37,12 +37,13 @@
         <source src="assets/audio/ogg/411749__natty23__bell-ding.ogg">
     </audio>
 
+
     <div class="game-container">
     
             <h1>Simon</h1>
                 <div class="row">
 
-                    <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 information">
+                    <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 body-text information">
                         <h2>Instructions</h2>
                             <ol>
                                 <li>If you want the game to force you to start over if you make a mistake, click the 
@@ -63,12 +64,12 @@
                     <div class="col-xs-12 order-xs-1 col-lg-4 order-lg-2">
                         <div> 
                             <input type="checkbox" name="strict-mode" id="strict-mode" />
-                            <span class="checkboxtext">Strict Mode</span>            
+                            <span class="body-text settings">Strict Mode</span>            
                         </div>    
                         <div> 
-                            <button type="button" id="start" class="btn btn-dark">Start</button>
-                            <button type="button" class="btn btn-light">Score:<span id="score" class="badge badge-light">0</span></button>
-                            <button type="button" id="reset" class="btn btn-dark">Reset</button>
+                            <button type="button" id="start" class="btn btn-dark body-text settings">Start</button>
+                            <button type="button" class="btn btn-light body-text settings">Score:<span class="badge badge-light body-text settings">0</span></button>
+                            <button type="button" id="reset" class="btn btn-dark body-text settings">Reset</button>
                         </div>
                         <div class="row justify-content-center">
                             <div id="blue" class="colour"></div>
@@ -80,7 +81,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-xs-12 order-xs-3 col-lg-3 order-lg-3 information">
+                    <div class="col-xs-12 order-xs-3 col-lg-3 order-lg-3 body-text information">
                         <h2>Credits</h2>
                             This game uses these sounds from freesound.org:
                             <ul>
@@ -103,5 +104,4 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
-
 </html>
