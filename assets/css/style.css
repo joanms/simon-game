@@ -79,9 +79,9 @@ h2 {
 
 /* Code to resize the checkbox from https://stackoverflow.com/a/10415275/9179340 */
 input[type=checkbox] {
- -ms-transform: scale(2); 
- -moz-transform: scale(2); 
- -webkit-transform: scale(2); 
- -o-transform: scale(2); 
+ -ms-transform: scale(1.5); 
+ -moz-transform: scale(1.5); 
+ -webkit-transform: scale(1.5); 
+ -o-transform: scale(1.5); 
  padding: 10px;
 }
