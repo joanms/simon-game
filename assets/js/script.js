@@ -48,7 +48,7 @@ function highlightColours() {
       $(element).addClass("active");
       setTimeout(function(){$(element).removeClass("active");}, 500);
     },
-    700 * index); //Index 0 is highlighted immediately, index 1 after 700ms, index 2 700ms after that, and so on.
+    700 * index); //The colour at index 0 is highlighted immediately, index 1 after 700ms, index 2 700ms after that, and so on.
   });
 }
 
