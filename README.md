@@ -134,4 +134,4 @@ It was manufactured and distributed by Milton Bradley and later by Hasbro after 
 
 I used [this video](https://www.youtube.com/watch?v=4pfvy_A5ceE) by YouTube user Happy Coder to help me work out the JavaScript logic.
 
-My mentors, Michael Newton and Chris Zielinski, provided valuable feedback and advice on the project.
+My tutor, Niel McEwen and my mentors, Michael Newton and Chris Zielinski, provided valuable feedback and advice on the project.
