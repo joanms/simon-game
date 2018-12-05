@@ -13,25 +13,25 @@
         
         <!--The sounds used in the game-->
         
-        <!--This sound plays when the blue button is highlighted-->
+        <!--This sound plays when the blue button is clicked or played as part of a sequence-->
         <audio id="blue-sound">
             <source src="assets/audio/mp3/177947__ubikphonik__ab1.mp3">
             <source src="assets/audio/ogg/177947__ubikphonik__ab1.ogg">
         </audio>
         
-        <!--This sound plays when the red button is highlighted-->
+        <!--This sound plays when the red button is clicked or played as part of a sequence-->
         <audio id="red-sound">
             <source src="assets/audio/mp3/177948__ubikphonik__c1.mp3">
             <source src="assets/audio/ogg/177948__ubikphonik__c1.ogg">
         </audio>
         
-        <!--This sound plays when the yellow button is highlighted-->
+        <!--This sound plays when the yellow button is clicked or played as part of a sequence-->
         <audio id="yellow-sound">
             <source src="assets/audio/mp3/177954__ubikphonik__eb1.mp3">
             <source src="assets/audio/ogg/177954__ubikphonik__eb1.ogg">
         </audio> 
         
-        <!--This sound plays when the orange button is highlighted-->
+        <!--This sound plays when the orange button is clicked or played as part of a sequence-->
         <audio id="orange-sound">
             <source src="assets/audio/mp3/177943__ubikphonik__f1.mp3">
             <source src="assets/audio/ogg/177943__ubikphonik__f1.ogg">
@@ -60,8 +60,9 @@
         
                 <h1>Simon</h1>
                 
-                    <div class="row">
+                    <div class="row"> <!--This row contains the instructions, the gameplay area and the credits for the sounds-->
     
+                        <!--Instructions for the user-->
                         <div class="col-xs-12 order-xs-2 col-lg-4 order-lg-1 body-text information">
                             <h2>Instructions</h2>
                                 <ol>
@@ -96,7 +97,8 @@
                                 <button type="button" id="reset" class="btn btn-dark body-text settings">Reset</button>
                             </div>
                             
-                            <div> <!--Coloured buttons that are highlighted when a sequence plays or the user clicks them-->
+                            <!--Coloured buttons that are highlighted when a sequence plays or the user clicks them-->
+                            <div> 
                                 <div class="row justify-content-center">
                                     <div id="blue" class="colour"></div>
                                     <div id="red" class="colour"></div>    
