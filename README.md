@@ -39,7 +39,7 @@ The user can start over at any time by clicking the “Reset” button and then 
     If the user clicks the correct sequence, the score increases and a bell rings before the next round starts.
     If they clicked an incorrect sequence, an error sound plays and an alert pops up telling them that they made a mistake, 
     and what to do next: start over in strict mode or try the same sequence again in normal mode. Because excessive popups 
-    are annoying, I only included ones that give necessary information to the user.
+    are annoying, I only included ones that give useful information to the user.
 
 - **I want to know when the game is over.**
 
@@ -57,7 +57,7 @@ The user can start over at any time by clicking the “Reset” button and then 
 
 ## Features
 
-- **Instructions**
+- **Instructions** prominently displayed so that the user knows what to do.
 - **Checkbox** to select Strict Mode if desired.
 - **Start button** to begin the game.
 - **Score counter** to keep track of the user's score.
@@ -93,26 +93,27 @@ can be tested with Jasmine.
     - I checked the highlighted buttons against gameSequence in the browser console to ensure that the correct buttons were highlighted.
     - I checked the score as I played to ensure that it increased by one point for each correct round input.
     - I played a full game multiple times to ensure that the fanfare played and the "You win!" alert displayed correctly when the score reached 20.
-    - I made deliberate errors in strict mode to ensure that the error tone played, the correct alert popped up and the page reloaded.
-    - I made deliberate errors in normal mode to ensure that the error tone played, the correct alert popped up and the sequence was highlighted again. 
-- I checked the layout on a desktop PC an iPad Air and a Samsung Galaxy S7 to ensure that it displays correctly at all screen sizes.
-    - On a PC monitor, the instructions are on the left, the gameplay area is in the middle and the credits for the sounds are on the right.
-    - On tablets and mobile phones, the gameplay area is at the top, the instructions are below it and the credits for the sounds are at the bottom.
+    - I made deliberate errors in strict mode to ensure that the error tone played, the correct alert popped up and the page reloaded after I clicked OK.
+    - I made deliberate errors in normal mode to ensure that the error tone played, the correct alert popped up, the sequence was highlighted again 
+    after I clicked OK and the game continued to function correctly. 
+- I checked the layout on a desktop PC, a laptop, a tablet computer and a smartphone to ensure that it displays correctly at all screen sizes.
+    - On large screens, the instructions are on the left, the gameplay area is in the middle and the credits for the sounds are on the right.
+    - On medium and smaller screens, the gameplay area is at the top, the instructions are below it and the credits for the sounds are at the bottom.
 
 ### Bug
 
-On mobile devices, the colour highlighting and sounds are out of sync, and when the user taps a coloured button, it isn't highlighted, but the sound plays. 
-The game otherwise works on mobile devices. After discussing this with my mentor, Chris Zielinski, I think that this bug is due to an inherent limitation 
-of mobile devices in handling JavaScript.
+On my smartphone, the colour highlighting and sounds are out of sync. The game otherwise works on mobile devices, and I received positive feedback from a classmate who tested 
+it on his phone. After discussing this with my mentor, Chris Zielinski, I think that this bug is due to an inherent limitation of the device in handling JavaScript.
 
 ## Deployment
 
 I deployed the project to GitHub as folows: 
 
-1. I navigated to the repository in GitHub.
-2. I clicked on Settings
-3. I scrolled down to GitHub Pages and selected the master branch as the source 
-4. I clicked Save. 
+1. I pushed my local repository to GitHub
+2. I navigated to the repository in GitHub.
+3. I clicked on Settings
+4. I scrolled down to GitHub Pages and selected the master branch as the source 
+5. I clicked Save. 
 
 The procedure worked without any errors, and there are no differences between the deployed version and the development version.
 
