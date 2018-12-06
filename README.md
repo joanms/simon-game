@@ -72,10 +72,11 @@ I could add the option to mute sounds for people who find them annoying. However
 ## Technologies Used
 
 - **[Lucidchart](https://www.lucidchart.com/)** was used to create a flowchart of the game logic.
+- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)** was used to write the content of the site.
 - **[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)** was used to style the content.
 - **[Bootstrap](https://getbootstrap.com/)** was used to simplify the layout and responsiveness.
-- **[Audacity](https://www.audacityteam.org/)** was used to convert the sound files to MP3 and OGG so that browsers could play them.
+- **[JavaScript](https://www.javascript.com/)** was used to write the game logic.
 - **[JQuery](https://jquery.com)** was used to simplify DOM manipulation and make the JavaScript more concise.
 - **[Jasmine](https://jasmine.github.io/)** was used to test the JavaScript code.
 - **[Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)** was used to enable Jasmine to test the jQuery code.
