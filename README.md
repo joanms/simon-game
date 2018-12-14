@@ -98,8 +98,6 @@ can be tested with Jasmine.
     - I made deliberate errors in normal mode to ensure that the error tone played, the correct alert popped up, the sequence was highlighted again 
     after I clicked OK and the game continued to function correctly. 
 - I checked the layout on a desktop PC, a laptop, a tablet computer and a smartphone to ensure that it displays correctly at all screen sizes.
-    - On large screens, the instructions are on the left, the gameplay area is in the middle and the credits for the sounds are on the right.
-    - On medium and smaller screens, the gameplay area is at the top, the instructions are below it and the credits for the sounds are at the bottom.
 
 ### Bug
 
