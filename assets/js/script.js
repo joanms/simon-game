@@ -57,9 +57,8 @@ function highlightColours() {
 //Compare the user's sequence with the randomly generated sequence
 function sequenceCompare() {
 
-//The syntax for the following line is from https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
-
-  if (userSequence.every(function(value, index) { return value === gameSequence[index]})) {
+//The syntax for the following line is based on https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript#19746771
+  if (userSequence.every(function(value, index) { return value === gameSequence[index]})) { //Check if the game sequence and user sequence match
     console.log("Match"); //Check if the above worked correctly.
     gameScore++; //A point is added to the user's score.
     $("#score").text(gameScore); //Display the user's score.
